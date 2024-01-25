@@ -1,0 +1,74 @@
+/* Container and Logo */
+
+.page-header{
+  height: 100px;
+}
+.nav-container,
+.list-container, 
+.logo-container, 
+.logo-image{
+  height: 100%;
+}
+
+.list-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo-image{
+  cursor: pointer;
+}
+
+/* Return */
+
+
+.return-home{
+  visibility: hidden;
+  background-color: #888888;
+  padding: 5px;
+  border-radius: 20px;
+}
+.return-text{
+  color: white;
+  padding: 0 10px;
+}
+
+
+
+/* Seacher */
+
+.search-container{
+  height: calc(100%/3);
+}
+.search-form{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.search-form, .search-bar, .search-button{
+  height: 100%;
+  background-color: #202020;
+  border: none;
+  border-radius: 20px;
+  color: #888888;
+}
+.search-bar{
+  border-radius: 0 20px 20px 0;
+  width: 80%;
+}
+.search-bar:focus{
+  outline: none;
+}
+
+.search-button{
+ padding: 0 10px;
+ border-radius: 20px 0 0 20px;
+ cursor: pointer;
+}
+
+@media screen and (max-width: 700px){
+  
+.return-text-hidden{
+  display: none;
+}
+}

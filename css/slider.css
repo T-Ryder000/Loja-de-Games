@@ -1,0 +1,210 @@
+
+.section-init{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 5px 0px;
+  max-height: 30em;
+}
+
+
+/* Poster geral e image*/
+
+.poster-container{
+  width: 80%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+ }
+.poster-image{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: -5px 5px 15px black;
+}
+
+/* Poster description */
+
+
+
+
+.poster-details{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100% ;
+  padding:0 0 5% 4%;
+  color: white;
+  /* box-shadow: inset 50px -50px 50px rgba(0, 0, 0, 0.534); */
+  --angulo: 280deg;
+  --deslocamento-x: calc(200px * cos(var(--angulo)));
+  --deslocamento-y: calc(200px * sin(var(--angulo)));
+  box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 200px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 15px;
+}
+
+.poster-title-container{
+  max-width: 100%;
+  height: calc(100%/8);
+}
+
+.poster-description, 
+.poster-acquire{
+  max-width: 100%;
+  height: calc(100%/6);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.poster-title{
+  font-size: 2.5em;
+}
+.poster-description-text1, 
+.poster-acquire-text{
+  font-size: 0.8em;
+}
+.poster-description-text2{
+  max-width: 50%;
+}
+
+.poster-acquire-form{
+  max-width: 50%;
+}
+
+.poster-acquire-buy, 
+.poster-acquire-save{
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+.poster-acquire-save{
+  background-color: rgba(255, 255, 255, 0.226);
+  color: white;
+}
+
+/* Slider */
+
+.wrapper{
+ width: 25%;
+ max-height: 30em;
+}
+
+.slider-container{
+  width: 100%;
+  height: 100%;
+}
+.slider-item{
+  width: 100%;
+  height: calc(100%/6);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.slider-item:hover{
+  background-color: #222222;
+}
+.slider-image{
+  border-radius: 20%;
+  object-fit: cover;
+  width: 25%;
+  height: 80%;
+}
+.slider-title{
+  width: 60%;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+
+
+@media screen and (max-width:1110px){
+  .section-init{
+    width: 97%;
+    gap: 5px;
+  }
+
+  .poster-container{
+    width: 100%;
+  }
+  .poster-title{
+    font-size: 2em;
+  }
+  .poster-description-text1, 
+  .poster-acquire-text{
+    font-size: 0.8em;
+  }
+  .poster-acquire-form{
+    max-width: 100%;
+  }
+
+  .slider-title{
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 750px) {
+  .poster-details{
+    gap: 0px;
+    --angulo: 280deg;
+    --deslocamento-x: calc(100px * cos(var(--angulo)));
+    --deslocamento-y: calc(100px * sin(var(--angulo)));
+    box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 100px rgb(0, 0, 0);
+  }
+  .poster-title-container{
+    max-width: 100%;
+    height: calc(100%/8);
+}
+
+  .poster-acquire{
+    max-width: 100%;
+    height: calc(100%/4);
+  }
+
+  .poster-description{ 
+    display: none;
+   }
+   .poster-title{
+    font-size: 1.5em;
+  }
+  .poster-acquire-buy, 
+  .poster-acquire-save{
+    font-size: 0.5em;
+    padding: 15px;
+  }
+
+  .slider-title{
+    font-size: 0.5em;
+  }
+}
+
+@media screen and (max-width:600px){
+  .poster-details{
+    --angulo: 280deg;
+    --deslocamento-x: calc(50px * cos(var(--angulo)));
+    --deslocamento-y: calc(50px * sin(var(--angulo)));
+    box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 100px rgb(0, 0, 0);
+  }
+  .poster-title{
+    font-size: 1em;
+  }
+  .poster-acquire{
+    max-width: 100%;
+    height: calc(100%/4);
+  }
+  .poster-acquire-buy, 
+  .poster-acquire-save{
+    font-size: 0.3em;
+    padding: 10px 10px;
+  }
+
+}

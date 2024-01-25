@@ -1,0 +1,135 @@
+ [
+  {
+    "nome": "DreadOut",
+    "descricao": "DreadOut é um jogo de terror sobrenatural em terceira pessoa onde você joga como Linda, uma estudante do ensino médio presa em uma velha cidade abandonada. Equipada com seu confiável smartphone, ela lutará contra encontros aterrorizantes e resolverá quebra-cabeças misteriosos que acabarão por determinar seu destino.",
+    "preco": 27.99,
+    "capa": "./images/capa/Dreadout.jpg",
+    "poster": "./images/posters/DreadOut.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256785605/movie480_vp9.webm?t=1589565157"
+  },
+  {
+    "nome": "FIA European Truck Racing Championship",
+    "descricao": "A única simulação oficial que apresenta todas as características únicas do ETRC e oferece a todos os fãs de corridas uma experiência de condução completamente nova: corra em um caminhão gigante de 5 toneladas e 1.000 cavalos contra 12 competidores, respeitando as regras da corrida para evitar penalidades.",
+    "preco": 69.99,
+    "capa": "./images/capa/FIA European Truck Racing Championship.jpg",
+    "poster": "./images/posters/FIA European Truck Racing Championship.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256756518/movie480.webm?t=1563446923"
+  }
+  ,
+  {
+    "nome": "Epistory - Typing Chronicles",
+    "descricao": "Epistory mergulha você em um jogo atmosférico de ação/aventura onde você interpreta uma garota montando uma raposa gigante que luta contra uma corrupção de inseto de um mundo de origami. À medida que você avança e explora este mundo, a história se desenrola literalmente e os mistérios do poder mágico das palavras são revelados.",
+    "preco": 42.99,
+    "capa": "./images/capa/Epistory - Typing Chronicles.jpg",
+    "poster": "./images/posters/Epistory - Typing Chronicles.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256662356/movie480.webm?t=1459347597"
+  }
+  ,
+  {
+    "nome": "Emily is Away Too",
+    "descricao": "Emily is Away Too é uma nova história com novos personagens e vários finais diferentes. Envie mensagens para seus amigos, navegue na web e escolha seu caminho nessa narrativa ramificada.",
+    "preco": 10.49,
+    "capa": "./images/capa/Emily is Away Too.png",
+    "poster": "./images/posters/Emily is Away Too.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256678917/movie480.webm?t=1487437798"
+  }
+  ,
+  {
+    "nome": "EFFIE",
+    "descricao": "Effie é um jogo de ação e aventura em 3D que combina elementos clássicos do gênero, como combate, plataformas e quebra-cabeças, com a exploração de um mundo expandido. Viva uma aventura de fantasia única e reviva a aparência dos videogames da velha escola!",
+    "preco": 49.99,
+    "capa": "./images/capa/Effie.jpg",
+    "poster": "./images/posters/EFFIE.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256751849/movie480.webm?t=1559033447"
+  }
+  ,
+  {
+    "nome": "Evoland 2",
+    "descricao": "Evoland 2 é um RPG único, com estilo gráfico e jogabilidade mudando conforme você avança em um enredo profundo baseado em viagens no tempo.",
+    "preco": 36.99,
+    "capa": "./images/capa/Evoland 2.jpg",
+    "poster": "./images/posters/Evoland 2.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256655909/movie480.webm?t=1447377699"
+  }
+  ,
+  {
+    "nome": "Eternity: The Last Unicorn",
+    "descricao": "RPG clássico, com história baseada na mitologia nórdica. Viaje por locais fascinantes, conheça personagens de fantasia e lute para proteger a imortalidade dos Elfos.",
+    "preco": 59.99,
+    "capa": "./images/capa/Eternity The Last Unicorn.jpg",
+    "poster": "./images/posters/Eternity The Last Unicorn.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256744613/movie480.webm?t=1551808839"
+  }
+  ,
+  {
+    "nome": "ELEX",
+    "descricao": "ELEX é uma experiência de RPG de ação artesanal dos premiados criadores da série Gothic, ambientada em um novo universo pós-apocalíptico de fantasia científica que coloca os jogadores em um enorme mundo de jogo cheio de personagens originais, criaturas mutantes, moral profunda. escolhas e ações poderosas.",
+    "preco": 57.99,
+    "capa": "./images/capa/ELEX.jpg",
+    "poster": "./images/posters/ELEX.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256698163/movie480.webm?t=1508162076"
+  }
+  ,
+  {
+    "nome": "Endless Legend™ - Classic Edition",
+    "descricao": "ENDLESS™ Legend é um jogo de estratégia de fantasia baseado em turnos 4X dos criadores de ENDLESS™ Space e Dungeon of the ENDLESS™. Controle todos os aspectos da sua civilização enquanto você luta para salvar seu mundo natal, Auriga. Crie sua própria lenda!",
+    "preco": 57.99,
+    "capa": "./images/capa/Endless Legend.jpg",
+    "poster": "./images/posters/Endless Legend.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034581/movie480.webm?t=1573401841"
+  }
+  ,
+  {
+    "nome": "ENDLESS™ Space 2",
+    "descricao": "ENDLESS™ Space 2 é uma Ópera Espacial Estratégica, apresentando a atraente jogabilidade “só mais uma volta”, ambientada no misterioso Universo ENDLESS™. Como líder da sua civilização, você imporá sua visão e construirá o maior império estelar?",
+    "preco": 79.99,
+    "capa": "./images/capa/ENDLESS™ Space 2.jpg",
+    "poster": "./images/posters/ENDLESS™ Space 2.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256685332/movie480.webm?t=1567713294"
+  }
+  ,
+  {
+    "nome": "Enforcer: Police Crime Action",
+    "descricao": "Junte-se ao Departamento de Polícia de Mountain Valley e elimine as ações criminosas que estão infestando a pequena cidade americana. Faça parte de perseguições rápidas e arriscadas com sua viatura, use armas de fogo e execute a justiça.",
+    "preco": 36.99,
+    "capa": "./images/capa/Enforcer Police Crime Action.jpg",
+    "poster": "./images/posters/Enforcer Police Crime Action.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034262/movie480.webm?t=1447363484"
+  }
+  ,
+  {
+    "nome": "Epic Car Factory",
+    "descricao": "Epic Car Factory coloca você no comando de sua própria montadora. Construa, comercialize, contrate, demita e muito mais nesta simulação de negócios em ritmo acelerado. O fracasso e o sucesso da empresa dependem inteiramente de suas decisões e de como você reage ao mercado em constante mudança.",
+    "preco": 20.69,
+    "capa": "./images/capa/Epic Car Factory.jpg",
+    "poster": "./images/posters/Epic Car Factory.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256713801/movie480.webm?t=1523311825"
+  }
+  ,
+  {
+    "nome": "Enemy Front",
+    "descricao": "ENEMY FRONT é o primeiro FPS verdadeiramente moderno da Segunda Guerra Mundial, com visuais impressionantes, níveis abertos e uma experiência de combate ricamente interativa que foge do modelo padrão de experiências FPS com script altamente lineares, dando ao jogador total liberdade para controlar seu estilo de jogo.",
+    "preco": 39.99,
+    "capa": "./images/capa/Enemy Front.jpg",
+    "poster": "./images/posters/Enemy Front.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2032281/movie480.webm?t=1447361798"
+  }
+  ,
+  {
+    "nome": "Fantasy Versus",
+    "descricao": "Fantasy Versus concentra-se em batalhas multijogador 4 vs.4 rápidas. Encontre seu próprio estilo de jogo, forme uma equipe e lute pela vitória em Fantasy Versus!",
+    "preco": 23.50,
+    "capa": "./images/capa/Fantasy Versus.jpg",
+    "poster": "./images/posters/Fantasy Versus.jpg",
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256714606/movie480.webm?t=1524394887"
+  }
+  ,
+  {
+    "nome": "Bully: Scholarship Edition",
+    "descricao": "Bully conta a história do travesso Jimmy Hopkins, de 15 anos, enquanto ele passa pela hilaridade e estranheza da adolescência. Vença os atletas na queimada, pregue peças nos mauricinhos, salve os nerds, beije a garota e navegue na hierarquia social na pior escola do mundo.",
+    "preco": 39.99,
+    "capa": "./images/capa/Fantasy Versus.jpg",
+    "poster": "./images/posters/Bully Scholarship Edition.jpg",
+    "trailer": "https://youtu.be/yqkynwFs9Hs?si=7fBl7EXsfT6r1KW9"
+  }
+]
