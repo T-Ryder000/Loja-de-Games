@@ -1,4 +1,4 @@
-export const get = ()=>{
+export const request = ()=>{
 
   return new Promise((resolve, reject)=>{
     fetch('./json/dados.json')

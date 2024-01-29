@@ -5,6 +5,7 @@
   @import url(./css/header.css);
   @import url(./css/slider.css);
   @import url(./css/products.css);
+  @import url(./css/footer.css);
 
 
 
@@ -14,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
 html, body{
@@ -25,4 +27,21 @@ html, body{
 a, li{
   list-style: none;
   text-decoration: none;
+}
+.scrollar{
+  display:none;
+}
+.button-scrollar{
+  display: none;
+  background-color: #a238ff;
+  color: white;
+  position: fixed;
+  z-index: 3;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }

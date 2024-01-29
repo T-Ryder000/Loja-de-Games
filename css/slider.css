@@ -207,16 +207,10 @@
   .poster-title{
     font-size: 1.5em;
   }
-  /* .poster-acquire-text{
-    max-width: 50%;
-  } */
   .poster-acquire{
     display:flex;
     height: calc(100%/4);
   }
-  /* .poster-acquire-form{
-    max-width: 50%;
-  } */
   .poster-acquire-buy, 
   .poster-acquire-save{
     margin-bottom: 5px;
