@@ -13,11 +13,13 @@
 /* Poster geral e image*/
 
 .poster-container{
+  overflow: hidden;
   width: 80%;
-  height: 100%;
+  max-height: 30em;
   position: relative;
   display: flex;
   align-items: center;
+  border-radius: 5px;
  }
 .poster-image{
   height: 100%;
@@ -84,7 +86,13 @@
   border: none;
   font-size: 0.7em;
   font-weight: bold;
+  cursor:pointer;
 }
+.poster-acquire-buy:hover, 
+.poster-acquire-save:hover{
+ opacity: 0.8;
+}
+
 .poster-acquire-save{
   background-color: rgba(255, 255, 255, 0.226);
   color: white;
@@ -93,13 +101,14 @@
 /* Slider */
 
 .wrapper{
+  border-radius: 5px;
  width: 25%;
  max-height: 30em;
 }
 
 .slider-container{
   width: 100%;
-  height: 100%;
+ height: 100%;
 }
 .slider-item{
   width: 100%;
@@ -130,7 +139,7 @@
 
 @media screen and (max-width:1110px){
   .section-init{
-    width: 97%;
+    width: 95%;
     gap: 5px;
   }
 
@@ -152,7 +161,11 @@
     font-size: 0.7em;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
+
+  .wrapper{
+    display:none;
+  }
   .poster-details{
     gap: 0px;
     --angulo: 280deg;
@@ -160,25 +173,12 @@
     --deslocamento-y: calc(100px * sin(var(--angulo)));
     box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 100px rgb(0, 0, 0);
   }
-  .poster-title-container{
-    max-width: 100%;
-    height: calc(100%/8);
-}
 
-  .poster-acquire{
-    max-width: 100%;
-    height: calc(100%/4);
-  }
-
-  .poster-description{ 
+  .poster-description{
     display: none;
-   }
-   .poster-title{
-    font-size: 1.5em;
   }
   .poster-acquire-buy, 
   .poster-acquire-save{
-    font-size: 0.5em;
     padding: 15px;
   }
 
@@ -187,7 +187,7 @@
   }
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:580px){
   .poster-details{
     --angulo: 280deg;
     --deslocamento-x: calc(50px * cos(var(--angulo)));
@@ -195,16 +195,31 @@
     box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 100px rgb(0, 0, 0);
   }
   .poster-title{
-    font-size: 1em;
+    font-size: 1.5em;
   }
   .poster-acquire{
     max-width: 100%;
-    height: calc(100%/4);
+    height: calc(100%/3);
+  }
+  .poster-acquire-form{
+    max-width: 50%;
   }
   .poster-acquire-buy, 
   .poster-acquire-save{
-    font-size: 0.3em;
+    margin-bottom: 5px;
+    font-size: 0.8em;
     padding: 10px 10px;
   }
 
 }
+
+@media screen and (max-width:450px){
+  .poster-title{
+    font-size: 1em;
+  }
+  .poster-acquire-buy, 
+  .poster-acquire-save{
+    font-size: 0.5em;
+  }
+}
+

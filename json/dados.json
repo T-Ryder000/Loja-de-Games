@@ -1,19 +1,25 @@
- [
+
+{
+  "games" : {
+ "collections": [
+  
   {
     "nome": "DreadOut",
     "descricao": "DreadOut é um jogo de terror sobrenatural em terceira pessoa onde você joga como Linda, uma estudante do ensino médio presa em uma velha cidade abandonada. Equipada com seu confiável smartphone, ela lutará contra encontros aterrorizantes e resolverá quebra-cabeças misteriosos que acabarão por determinar seu destino.",
     "preco": 27.99,
     "capa": "./images/capa/Dreadout.jpg",
     "poster": "./images/posters/DreadOut.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256785605/movie480_vp9.webm?t=1589565157"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256785605/movie480_vp9.webm?t=1589565157",
+    "id": 1
   },
   {
-    "nome": "FIA European Truck Racing Championship",
+    "nome": "Truck Racing Championship",
     "descricao": "A única simulação oficial que apresenta todas as características únicas do ETRC e oferece a todos os fãs de corridas uma experiência de condução completamente nova: corra em um caminhão gigante de 5 toneladas e 1.000 cavalos contra 12 competidores, respeitando as regras da corrida para evitar penalidades.",
     "preco": 69.99,
     "capa": "./images/capa/FIA European Truck Racing Championship.jpg",
     "poster": "./images/posters/FIA European Truck Racing Championship.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256756518/movie480.webm?t=1563446923"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256756518/movie480.webm?t=1563446923",
+    "id": 2
   }
   ,
   {
@@ -22,7 +28,8 @@
     "preco": 42.99,
     "capa": "./images/capa/Epistory - Typing Chronicles.jpg",
     "poster": "./images/posters/Epistory - Typing Chronicles.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256662356/movie480.webm?t=1459347597"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256662356/movie480.webm?t=1459347597",
+    "id": 3
   }
   ,
   {
@@ -31,7 +38,8 @@
     "preco": 10.49,
     "capa": "./images/capa/Emily is Away Too.png",
     "poster": "./images/posters/Emily is Away Too.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256678917/movie480.webm?t=1487437798"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256678917/movie480.webm?t=1487437798",
+    "id": 4
   }
   ,
   {
@@ -40,7 +48,8 @@
     "preco": 49.99,
     "capa": "./images/capa/Effie.jpg",
     "poster": "./images/posters/EFFIE.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256751849/movie480.webm?t=1559033447"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256751849/movie480.webm?t=1559033447",
+    "id": 5
   }
   ,
   {
@@ -49,7 +58,8 @@
     "preco": 36.99,
     "capa": "./images/capa/Evoland 2.jpg",
     "poster": "./images/posters/Evoland 2.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256655909/movie480.webm?t=1447377699"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256655909/movie480.webm?t=1447377699",
+    "id": 6
   }
   ,
   {
@@ -58,7 +68,8 @@
     "preco": 59.99,
     "capa": "./images/capa/Eternity The Last Unicorn.jpg",
     "poster": "./images/posters/Eternity The Last Unicorn.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256744613/movie480.webm?t=1551808839"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256744613/movie480.webm?t=1551808839",
+    "id": 7
   }
   ,
   {
@@ -67,7 +78,8 @@
     "preco": 57.99,
     "capa": "./images/capa/ELEX.jpg",
     "poster": "./images/posters/ELEX.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256698163/movie480.webm?t=1508162076"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256698163/movie480.webm?t=1508162076",
+    "id": 8
   }
   ,
   {
@@ -76,7 +88,8 @@
     "preco": 57.99,
     "capa": "./images/capa/Endless Legend.jpg",
     "poster": "./images/posters/Endless Legend.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034581/movie480.webm?t=1573401841"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034581/movie480.webm?t=1573401841",
+    "id": 9
   }
   ,
   {
@@ -85,7 +98,8 @@
     "preco": 79.99,
     "capa": "./images/capa/ENDLESS™ Space 2.jpg",
     "poster": "./images/posters/ENDLESS™ Space 2.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256685332/movie480.webm?t=1567713294"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256685332/movie480.webm?t=1567713294",
+    "id": 10
   }
   ,
   {
@@ -94,7 +108,8 @@
     "preco": 36.99,
     "capa": "./images/capa/Enforcer Police Crime Action.jpg",
     "poster": "./images/posters/Enforcer Police Crime Action.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034262/movie480.webm?t=1447363484"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2034262/movie480.webm?t=1447363484",
+    "id": 11
   }
   ,
   {
@@ -103,7 +118,8 @@
     "preco": 20.69,
     "capa": "./images/capa/Epic Car Factory.jpg",
     "poster": "./images/posters/Epic Car Factory.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256713801/movie480.webm?t=1523311825"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256713801/movie480.webm?t=1523311825",
+    "id": 12
   }
   ,
   {
@@ -112,7 +128,8 @@
     "preco": 39.99,
     "capa": "./images/capa/Enemy Front.jpg",
     "poster": "./images/posters/Enemy Front.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2032281/movie480.webm?t=1447361798"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/2032281/movie480.webm?t=1447361798",
+    "id": 13
   }
   ,
   {
@@ -121,15 +138,20 @@
     "preco": 23.50,
     "capa": "./images/capa/Fantasy Versus.jpg",
     "poster": "./images/posters/Fantasy Versus.jpg",
-    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256714606/movie480.webm?t=1524394887"
+    "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256714606/movie480.webm?t=1524394887",
+    "id": 14
   }
   ,
   {
     "nome": "Bully: Scholarship Edition",
     "descricao": "Bully conta a história do travesso Jimmy Hopkins, de 15 anos, enquanto ele passa pela hilaridade e estranheza da adolescência. Vença os atletas na queimada, pregue peças nos mauricinhos, salve os nerds, beije a garota e navegue na hierarquia social na pior escola do mundo.",
     "preco": 39.99,
-    "capa": "./images/capa/Fantasy Versus.jpg",
+    "capa": "./images/capa/Bully Scholarship Edition.jpg",
     "poster": "./images/posters/Bully Scholarship Edition.jpg",
-    "trailer": "https://youtu.be/yqkynwFs9Hs?si=7fBl7EXsfT6r1KW9"
+    "trailer": "https://youtu.be/yqkynwFs9Hs?si=7fBl7EXsfT6r1KW9",
+    "id": 15
   }
 ]
+
+}
+}
