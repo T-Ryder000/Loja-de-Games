@@ -3,7 +3,9 @@ import drawSlider from "./js/drawSlider.js"
 import drawProduct from "./js/drawProduct.js"
 import products from "./js/products.js"
 import slider from "./js/Slider.js"
+import pageProduct from "./js/pages/pageProduct.js"
 
+import toChange from "./js/toChangePage.js"
 
 request()
 .then((games)=>{
@@ -11,6 +13,8 @@ request()
   slider()
   drawProduct(games)
   products()
+  pageProduct(games)
+  toChange(games)
 })
 .catch((error)=>{
  console.log(`Houve um erro na chamada de dados: ${error}`)
@@ -31,6 +35,7 @@ window.addEventListener('scroll', function() {
     buttonScrollar.style.display = "none";
   }
 });
+
 
 
 

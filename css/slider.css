@@ -15,7 +15,7 @@
 .poster-container{
   overflow: hidden;
   width: 80%;
-  height: 30em;
+  max-height: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -25,6 +25,8 @@
 
  .active-animation{
   visibility: visible;
+  max-height: 100%;
+  width: 100%;
   animation: fadeAlternating 1s;
  }
 
@@ -39,13 +41,13 @@
  .poster-item{
   visibility: hidden;
   position: absolute;
-  height: 100%;
+  max-height: 100%;
   width: 100%;
   border-radius: 5px;
  }
 .poster-image{
-  height: 100%;
-  width: 100%;
+  max-height: 30em;
+  min-width: 100%;
   border-radius: 5px;
   box-shadow: -5px 5px 15px black;
 }
@@ -229,6 +231,10 @@
   .poster-container{
     height: 23em;
   }
+  .poster-image{
+    max-height: 23em;
+  }
+
   .wrapper{
     height: 23em;
   }
@@ -239,7 +245,6 @@
   .section-init{
     margin-top: 30px;
   }
-
 
   .wrapper{
     display:none;
@@ -270,11 +275,17 @@
   .poster-container{
     height: 20em;
   }
+  .poster-image{
+    max-height: 20em;
+  }
 }
 
 @media screen and (max-width:580px){
 
   .poster-container{
+    max-height: 17em;
+  }
+  .poster-image{
     max-height: 17em;
   }
   .poster-details{
@@ -306,6 +317,9 @@
 
 @media screen and (max-width:450px){
   .poster-container{
+    max-height: 15em;
+  }
+  .poster-image{
     max-height: 15em;
   }
   .poster-title{

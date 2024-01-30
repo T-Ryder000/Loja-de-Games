@@ -35,8 +35,8 @@ const carouselProducts=()=>{
 
 
   productItem.forEach((item)=>{
-    const link = item.querySelector('[data-link="item"]')
-    link.addEventListener('click', preventDefault)
+    // const link = item.querySelector('[data-link="item"]')
+    // link.addEventListener('click', preventDefault)
     item.addEventListener('dragstart', preventDefault)
   })
 

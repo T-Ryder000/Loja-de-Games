@@ -30,7 +30,7 @@ const drawProduct = (games) => {
     itemElement.setAttribute('data-item', 'carousel');
 
     itemElement.innerHTML = `
-      <a class="product-item-link" href="/#" data-link="item">
+      <a class="product-item-link" href="/#${element.nome}" data-link="item">
         <img class="product-image" src="${element.capa}" alt="">
         <div class="product-description">
           <h1 class="product-title">${element.nome}</h1>
