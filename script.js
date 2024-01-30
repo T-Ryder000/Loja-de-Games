@@ -1,10 +1,15 @@
 import { request } from "./js/request.js"
-import home from "./js/home.js"
+import drawSlider from "./js/drawSlider.js"
+import drawProduct from "./js/drawProduct.js"
 import products from "./js/products.js"
+import slider from "./js/Slider.js"
+
 
 request()
 .then((games)=>{
-  home(games)
+  drawSlider(games)
+  slider()
+  drawProduct(games)
   products()
 })
 .catch((error)=>{

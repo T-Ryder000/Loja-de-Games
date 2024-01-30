@@ -1,4 +1,4 @@
-const home = (games) => {
+const drawProduct = (games) => {
   const { collections } = games;
 
   const sectionProducts = document.querySelector('.section-products');
@@ -53,4 +53,4 @@ const home = (games) => {
   });
 };
 
-export default home;
+export default drawProduct;
