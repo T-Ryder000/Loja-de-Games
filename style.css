@@ -6,6 +6,7 @@
   @import url(./css/slider.css);
   @import url(./css/products.css);
   @import url(./css/footer.css);
+  @import url(./css/showProduct.css);
 
 
 
@@ -20,7 +21,7 @@
 
 html, body{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #121212;
 }
 
@@ -28,6 +29,11 @@ a, li{
   list-style: none;
   text-decoration: none;
 }
+
+/* .page-main{
+  height: 100%;
+} */
+
 .scrollar{
   display:none;
 }
