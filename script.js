@@ -1,4 +1,10 @@
+import home from "./js/pages/home.js" //importando pagina home
 const main = document.querySelector('[data-main="root"]') // variavél da main
+//Chama a pagina principal( o home ) ao carregar a pagina
+window.addEventListener('DOMContentLoaded', () => {
+  main.appendChild(home());
+});
+
 
 //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar a parte do html mediante o necessario.
 import { request } from "./js/service/request.js"
@@ -6,7 +12,6 @@ import drawSlider from "./js/components/drawSlider.js"
 import drawProduct from "./js/components/drawProduct.js"
 import products from "./js/modules/products.js"
 import slider from "./js/modules/Slider.js"
-import home from "./js/pages/home.js"
 import pageProduct from "./js/pages/pageProduct.js"
 
 
@@ -39,11 +44,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-//Chama a pagina principal( o home ) ao carregar a pagina
-
-window.addEventListener('load', () => {
-    main.appendChild(home());
-});
 
 
 
