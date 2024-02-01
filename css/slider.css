@@ -1,3 +1,4 @@
+/* Classe da seção inicial, que contém os posters e sliders dos posters */
 
 .section-init{
   display: flex;
@@ -10,7 +11,7 @@
 }
 
 
-/* Poster geral e image*/
+/* poster geral e suas imagens*/
 
 .poster-container{
   overflow: hidden;
@@ -23,21 +24,23 @@
   position: relative;
  }
 
+/* Classe que é add para mostrar o poster do momento, e seu efeito */
  .active-animation{
   visibility: visible;
   max-height: 100%;
   width: 100%;
   animation: fadeAlternating 1s;
  }
+ @keyframes fadeAlternating {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+ }
 
-@keyframes fadeAlternating {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* Classe original de cada item enquanto ele não é ativado */
  .poster-item{
   visibility: hidden;
   position: absolute;
@@ -52,10 +55,7 @@
   box-shadow: -5px 5px 15px black;
 }
 
-/* Poster description */
-
-
-
+/* Descrição interna do poster*/
 
 .poster-details{
   position: absolute;
@@ -79,7 +79,9 @@
   max-width: 100%;
   height: calc(100%/8);
 }
-
+.poster-title{
+  font-size: 2.5em;
+}
 .poster-description, 
 .poster-acquire{
   max-width: 100%;
@@ -87,9 +89,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.poster-title{
-  font-size: 2.5em;
 }
 .poster-description-text1, 
 .poster-acquire-text{
@@ -102,7 +101,6 @@
 .poster-acquire-form{
   max-width: 50%;
 }
-
 .poster-acquire-buy, 
 .poster-acquire-save{
   padding: 20px;
@@ -116,25 +114,24 @@
 .poster-acquire-save:hover{
  opacity: 0.8;
 }
-
 .poster-acquire-save{
   background-color: rgba(255, 255, 255, 0.226);
   color: white;
 }
 
-/* Slider */
+/* Slider Controlador do poster e suas imagens*/
 
 .wrapper{
  border-radius: 5px;
  width: 25%;
  max-height: 30em;
 }
-
 .slider-container{
   width: 100%;
  height: 100%;
 }
 
+/* Classe que ativa e dá o efeito do slider assim como o do poster dele que está ativo */
 .active-slider{
   width: 100%;
   height: calc(100%/6);
@@ -166,6 +163,7 @@
   }
 }
 
+/* Classe original, que se mantem enquanto não é ativado */
 .slider-item{
   width: 100%;
   height: calc(100%/6);
@@ -194,18 +192,15 @@
 }
 
 
+/* Ajustes de responsividade */
 
 @media screen and (max-width:1110px){
   .section-init{
     width: 95%;
     gap: 5px;
   }
-
   .poster-container{
     width: 100%;
-    height: 27em;
-  }
-  .wrapper{
     height: 27em;
   }
   .poster-title{
@@ -222,6 +217,9 @@
     max-width: 100%;
   }
 
+  .wrapper{
+    height: 27em;
+  }
   .slider-title{
     font-size: 0.7em;
   }
@@ -244,10 +242,7 @@
 @media screen and (max-width: 800px) {
   .section-init{
     margin-top: 30px;
-  }
-
-  .wrapper{
-    display:none;
+    flex-direction: column;
   }
   .poster-details{
     gap: 0px;
@@ -267,9 +262,39 @@
   .poster-acquire-save-text{
     display:none;
   }
-  .slider-title{
-    font-size: 0.5em;
+
+  /* Ajuste do wrapper para mobile, no formato de radio button */
+
+  .wrapper{
+    width: 100%;
+    height: auto;
   }
+  .slider-container{
+    display:flex;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+    padding: 1em;
+  }
+  .active-slider{
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+  .active-slider::before {
+    border-radius: 50%;
+    background-color:#a238ff;
+  }
+  .slider-item{
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #222222;
+  }
+  .slider-image, .slider-title{
+    display:none;
+  }
+
 }
 @media screen and (max-width:650px){
   .poster-container{
@@ -293,7 +318,6 @@
     --deslocamento-x: calc(50px * cos(var(--angulo)));
     --deslocamento-y: calc(50px * sin(var(--angulo)));
     box-shadow: inset var(--deslocamento-x) var(--deslocamento-y) 100px rgb(0, 0, 0);
-
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
@@ -314,6 +338,11 @@
   }
 
 }
+@media screen and (max-width:500px){
+  .poster-title{
+    font-size: 0.95em;
+  }
+}
 
 @media screen and (max-width:450px){
   .poster-container{
@@ -321,9 +350,6 @@
   }
   .poster-image{
     max-height: 15em;
-  }
-  .poster-title{
-    font-size: 1em;
   }
   .poster-acquire-buy, 
   .poster-acquire-save{

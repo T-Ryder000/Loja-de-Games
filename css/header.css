@@ -1,74 +1,71 @@
-/* Container and Logo */
+/* Container header e a Logo */
 
 .page-header{
   height: 100px;
 }
-.nav-container,
-.list-container, 
-.logo-container, 
-.logo-image{
+.nav-container-header,
+.list-container-header, 
+.logo-container-header, 
+.logo-image-header{
   height: 100%;
 }
-
-.list-container{
+.list-container-header{
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.logo-image{
+.logo-image-header{
   cursor: pointer;
 }
 
-/* Return */
+/* Botao de retornar */
 
 
-.return-home{
+.return-home-header{
   visibility: hidden;
   background-color:#a238ff;
   padding: 5px;
   border-radius: 20px;
 }
-.return-text{
+.return-text-header{
   color: white;
   padding: 0 10px;
 }
 
 
+/* Barra de pesquisa */
 
-/* Seacher */
-
-.search-container{
+.search-container-header{
   height: calc(100%/3);
 }
-.search-form{
+.search-form-header{
   display: flex;
   flex-wrap: nowrap;
 }
-
-.search-form, .search-bar, .search-button{
+.search-form-header, .search-bar-header, .search-button-header{
   height: 100%;
   background-color: #202020;
   border: none;
   border-radius: 20px;
   color: #888888;
 }
-.search-bar{
+.search-bar-header{
   border-radius: 0 20px 20px 0;
   width: 80%;
 }
-.search-bar:focus{
+.search-bar-header:focus{
   outline: none;
 }
-
-.search-button{
+.search-button-header{
  padding: 0 10px;
  border-radius: 20px 0 0 20px;
  cursor: pointer;
 }
 
+/* Ajustes de responsividade */
+
 @media screen and (max-width: 700px){
-  
-.return-text-hidden{
+.return-text-header-hidden{
   display: none;
 }
 }

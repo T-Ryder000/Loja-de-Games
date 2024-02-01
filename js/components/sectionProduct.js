@@ -1,34 +1,33 @@
-const drawProduct = (games) => {
+const sectionProduct = games => {
+  const { collections } = games
 
-  const { collections } = games;
-
-  const sectionProducts = document.querySelector('.section-products');
+  const sectionProducts = document.querySelector('.section-products')
 
   // Verifica se o elemento .section-products foi encontrado no documento.
   if (!sectionProducts) {
-    console.error('Elemento .section-products não foi encontrado no documento.');
-    return;
+    console.error('Elemento .section-products não foi encontrado no documento.')
+    return
   }
 
   // Criação de seções
   for (let i = 1; i <= 3; i++) {
-    const productContainerItem = document.createElement('div');
-    productContainerItem.classList.add('products-container');
+    const productContainerItem = document.createElement('div')
+    productContainerItem.classList.add('products-container')
 
     productContainerItem.innerHTML = `
       <button class="fa-solid fa-chevron-left btn-previous" data-button="previous"></button>
       <button class="fa-solid fa-chevron-right btn-next" data-button="next"></button>
       <ul class="product-container-item" data-container="carousel${i}"></ul>
-    `;
+    `
 
-    sectionProducts.appendChild(productContainerItem);
+    sectionProducts.appendChild(productContainerItem)
   }
 
   // Adiciona itens as seções.
   collections.forEach(element => {
-    const itemElement = document.createElement('li');
-    itemElement.classList.add('product-item');
-    itemElement.setAttribute('data-item', 'carousel');
+    const itemElement = document.createElement('li')
+    itemElement.classList.add('product-item')
+    itemElement.setAttribute('data-item', 'carousel')
 
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
@@ -41,17 +40,23 @@ const drawProduct = (games) => {
           </form>
         </div>
       </a>
-    `;
+    `
 
     // Adiciona os elementos dos itens as seções.
     if (element.id < 5) {
-      sectionProducts.querySelector('[data-container="carousel1"]').appendChild(itemElement);
+      sectionProducts
+        .querySelector('[data-container="carousel1"]')
+        .appendChild(itemElement)
     } else if (element.id > 4 && element.id < 10) {
-      sectionProducts.querySelector('[data-container="carousel2"]').appendChild(itemElement);
+      sectionProducts
+        .querySelector('[data-container="carousel2"]')
+        .appendChild(itemElement)
     } else if (element.id > 9) {
-      sectionProducts.querySelector('[data-container="carousel3"]').appendChild(itemElement);
+      sectionProducts
+        .querySelector('[data-container="carousel3"]')
+        .appendChild(itemElement)
     }
-  });
-};
+  })
+}
 
-export default drawProduct;
+export default sectionProduct

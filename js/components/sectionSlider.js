@@ -1,29 +1,30 @@
-const drawSlider= (games) => {
-  const { collections } = games;
+const sectionSlider = games => {
+  const { collections } = games
 
-  //Container dos Banners
-  const posterContainer = document.querySelector('[data-container="poster"]');
-
+  //Container dos posters
+  const posterContainer = document.querySelector('[data-container="poster"]')
 
   //Container wrapper
-  const containerSlideItem = document.querySelector('[data-container="wrapper"]')
-  
+  const containerSlideItem = document.querySelector(
+    '[data-container="wrapper"]'
+  )
+
   // Verifica se o elemento containerWrapper foi encontrado no documento.
   if (!containerSlideItem) {
-    console.error('Elemento "containerSlideItem" não foi encontrado no documento.');
-    return;
+    console.error(
+      'Elemento "containerSlideItem" não foi encontrado no documento.'
+    )
+    return
   }
 
-
-
   collections.forEach(element => {
-  // Criação dos Banners e inclusão
+    // Criação dos posters e inclusão
 
-    const bannerItem = document.createElement('div');
-    bannerItem.classList.add('poster-item');
-    bannerItem.setAttribute('data-item', 'poster');
+    const posterItem = document.createElement('div')
+    posterItem.classList.add('poster-item')
+    posterItem.setAttribute('data-item', 'poster')
 
-    bannerItem.innerHTML = `
+    posterItem.innerHTML = `
     <img class="poster-image" src="${element.poster}" alt="">
     
     <div class="poster-details">
@@ -42,12 +43,11 @@ const drawSlider= (games) => {
         </form>
       </div>
     </div>
-    `;
+    `
 
-    if (element.id > 8 ){
-      posterContainer.appendChild(bannerItem);
+    if (element.id > 8) {
+      posterContainer.appendChild(posterItem)
     }
-
 
     //Criação do slideItem e inclusão
 
@@ -60,13 +60,10 @@ const drawSlider= (games) => {
     <h1 class="slider-title">${element.nome}</h1>
     `
 
-
-    if(element.id > 8){
+    if (element.id > 8) {
       containerSlideItem.appendChild(slideItem)
     }
-
   })
-
 }
 
-export default drawSlider
+export default sectionSlider

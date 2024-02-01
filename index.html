@@ -1,63 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Games</title>
-  <link rel="icon" href="./images/Game-Logo.png">
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body id="page-top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja de games</title>
+    <link rel="icon" href="./images/Game-Logo.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body id="page-top">
+    <!-- Header -->
+    <header class="page-header">
+      <nav class="nav-container-header">
+        <ul class="list-container-header">
+          <li class="logo-container-header">
+            <img class="logo-image-header" src="./images/Game-Logo.png" />
+          </li>
+          <li class="return-home-header" data-return="return-home">
+            <a class="return-text-header" href="#/">
+              <i class="fa-solid fa-arrow-left"></i>
+              <spam class="return-text-header-hidden"> Página inicial</spam>
+            </a>
+          </li>
+          <li class="search-container-header">
+            <form class="search-form-header" action="#/">
+              <button
+                class="fa-solid fa-magnifying-glass search-button-header"
+              ></button>
+              <input
+                class="search-bar-header"
+                type="text"
+                placeholder="Pesquisar loja"
+              />
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- Header -->
-  <header class="page-header">
-    <Nav class="nav-container">
-      <ul class="list-container">
-        <li class="logo-container">
-          <img class="logo-image" src="./images/Game-Logo.png">
-        </li>
-        <li class="return-home" data-return="return-home">
-          <a class="return-text" href="#/">
-            <i class="fa-solid fa-arrow-left"></i>
-            <spam class="return-text-hidden"> Página inicial</spam>
-          </a>
-        </li>
-        <li class="search-container">
-          <form class="search-form" action="#/">
-            <button class="fa-solid fa-magnifying-glass search-button">
-            </button>
-            <input class="search-bar" type="text" placeholder="Pesquisar loja">
-          </form>
-        </li>
-      </ul>
-    </Nav>
-  </header>
+    <!-- Main -->
 
-  <!-- Main -->
-  <main class="page-main" data-main="root">
+    <main class="page-main" data-main="root">
       <!-- Botão para scrollar -->
-      <a href="#page-top" class="scrollar"><button class="fa-solid fa-arrow-up button-scrollar"></button></a>
-  </main>
+      <a href="#page-top" class="scrollar" data-button="scrollar"
+        ><button class="fa-solid fa-arrow-up button-scrollar"></button
+      ></a>
+    </main>
 
-  <!-- Footer -->
+    <!-- Footer -->
 
-  <footer class="page-footer">
-    <!-- Logo do rodapé -->
-    <div class="containers-footer">
-      <a href="#page-top" class="link-footer"><img class="logo-footer" src="./images/Game-Logo.png"></a> 
-    </div>
-    <!-- Creditos ao desenvolvedor e suas redes sociais -->
-    <div class="containers-footer">
-     <a href="https://www.linkedin.com/in/thiago-araujo-da-silva-b2897a190/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRJWAko4ZQ4u4TirJjpWs0A%3D%3D" target="_blank"><h1 class="text-footer">Desenvolvido por Dev-Thyago </h1></a>
-    </div>
-    <div class="containers-footer">
-     <a href="https://www.facebook.com/thiago.araujo.96995/" target="_blank"><i class="fa-brands fa-square-facebook media-footer"></i></a>
-     <a href="https://wa.me/7591972803?text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20para%20solicitar%20os%20seus%20servi%C3%A7os.%20Podemos%20conversar%3F" target="_blank"><i class="fa-brands fa-square-whatsapp media-footer"></i></a>
-     <a href="https://www.instagram.com/_thyag0?igsh=b2swd2Uzb21qOHJn" target="_blank"><i class="fa-brands fa-square-instagram media-footer"></i></a>
-    </div>
-  </footer>
+    <footer class="page-footer">
+      <!-- Logo do rodapé -->
+      <div class="containers-footer">
+        <a href="#page-top" class="link-footer"
+          ><img class="logo-footer" src="./images/Game-Logo.png"
+        /></a>
+      </div>
+      <!-- Creditos ao desenvolvedor e suas redes sociais -->
+      <div class="containers-footer">
+        <a
+          href="https://www.linkedin.com/in/thiago-araujo-da-silva-b2897a190/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRJWAko4ZQ4u4TirJjpWs0A%3D%3D"
+          target="_blank"
+          ><h1 class="text-footer">Desenvolvido por Dev-Thyago</h1></a
+        >
+      </div>
+      <div class="containers-footer">
+        <a href="https://www.facebook.com/thiago.araujo.96995/" target="_blank"
+          ><i class="fa-brands fa-square-facebook media-footer"></i
+        ></a>
+        <a
+          href="https://wa.me/7591972803?text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20para%20solicitar%20os%20seus%20servi%C3%A7os.%20Podemos%20conversar%3F"
+          target="_blank"
+          ><i class="fa-brands fa-square-whatsapp media-footer"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/_thyag0?igsh=b2swd2Uzb21qOHJn"
+          target="_blank"
+          ><i class="fa-brands fa-square-instagram media-footer"></i
+        ></a>
+      </div>
+    </footer>
 
-  <script src="https://kit.fontawesome.com/730f4803c3.js" crossorigin="anonymous"></script>
-  <script type="module" src="./script.js"></script>
-</body>
+    <!-- Scripts -->
+
+    <script
+      src="https://kit.fontawesome.com/730f4803c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module">
+      import home from './js/pages/home.js' //importando pagina home
+      const main = document.querySelector('[data-main="root"]') // variavél da main
+      //Chama a pagina principal( o home ) ao carregar a pagina
+      window.addEventListener('DOMContentLoaded', () => {
+        main.appendChild(home())
+      })
+
+      //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar a parte do html mediante o necessario.
+      import { request } from './js/service/request.js'
+      import sectionSlider from './js/components/sectionSlider.js'
+      import sectionProduct from './js/components/sectionProduct.js'
+      import slider from './js/modules/Slider.js'
+      import products from './js/modules/products.js'
+      import scrollar from './js/modules/scrollar.js'
+      import pageProduct from './js/pages/pageProduct.js'
+      //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
+      request()
+        .then(games => {
+          sectionSlider(games)
+          sectionProduct(games)
+          slider()
+          products()
+          pageProduct(games)
+          scrollar()
+        })
+        .catch(error => {
+          console.log(`Houve um erro na chamada de dados: ${error}`)
+        })
+    </script>
+  </body>
 </html>

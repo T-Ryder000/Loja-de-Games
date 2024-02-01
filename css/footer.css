@@ -26,22 +26,22 @@
   color:white;
 }
 
+
+/* Ajustes de responsividade */
+
 @media screen and (max-width: 600px){
   .page-footer{
     flex-direction: column;
     height: auto;
   }
-
   .containers-footer{
     width: 100%;
     padding: 1em;
   }
-  
   .logo-footer{
     width: 10em;
   }
   .text-footer{
     font-size: 0.8em;
   }
-
 }
