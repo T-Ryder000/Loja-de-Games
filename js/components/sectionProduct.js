@@ -42,6 +42,7 @@ const sectionProduct = games => {
       </a>
     `
 
+    
     // Adiciona os elementos dos itens as seções.
     if (element.id < 5) {
       sectionProducts

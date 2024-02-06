@@ -1,6 +1,8 @@
 const sectionSlider = games => {
   const { collections } = games
 
+  const lastSixElements = collections.length - 7 // variavel que condiciona o slider a mostrar sempre os ultimos 6 elementos do banco json
+ 
   //Container dos posters
   const posterContainer = document.querySelector('[data-container="poster"]')
 
@@ -45,7 +47,8 @@ const sectionSlider = games => {
     </div>
     `
 
-    if (element.id > 8) {
+
+    if (element.id > lastSixElements) {
       posterContainer.appendChild(posterItem)
     }
 
@@ -60,7 +63,7 @@ const sectionSlider = games => {
     <h1 class="slider-title">${element.nome}</h1>
     `
 
-    if (element.id > 8) {
+    if (element.id > lastSixElements) {
       containerSlideItem.appendChild(slideItem)
     }
   })
