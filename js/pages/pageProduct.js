@@ -1,7 +1,7 @@
 const pageProduct = games => {
   // variaveis
 
-  const sectionInit = document.querySelector('.section-slider') // Sessao do slider da pagina
+  const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') // sessao da coleção de jogos
   const product = document.querySelectorAll('[data-item="carousel"]') //variavel dos Jogos da coleção
   const returnButton = document.querySelector('[data-return="return-home"]') // botão escondido, que aparece quando se está na pagina do jogo, para ele retornar ao home.
@@ -41,7 +41,7 @@ const pageProduct = games => {
     const showAndHide = () => {
       returnButton.style.visibility = 'visible'
       showProduct.style.display = 'flex'
-      sectionInit.style.display = 'none'
+      containerSLider.classList = 'section-slider-hide'
       sectionProducts.style.display = 'none'
     }
 
@@ -69,8 +69,14 @@ const pageProduct = games => {
       pauseVideo(gameTrailer)
       returnButton.style.visibility = 'hidden'
       showProduct.style.display = 'none'
-      sectionInit.style.display = 'flex'
+      containerSLider.classList="section-slider"
       sectionProducts.style.display = 'flex'
+
+      product.forEach((item)=>{ //para limpeza da pesquisa e atribuir novamente classes visiveis aos produtos
+        const searchBar = document.querySelector('[data-bar="search"]')
+        searchBar.value = '' 
+        item.classList = 'product-item'
+      })
     })
   })
 }

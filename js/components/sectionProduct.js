@@ -28,11 +28,12 @@ const createAndAddProductSection= games => {
     const itemElement = document.createElement('li')
     itemElement.classList.add('product-item')
     itemElement.setAttribute('data-item', 'carousel')
+    itemElement.id = element.id //para encontra no momento da pesquisa
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
         <img class="product-image" src="${element.capa}" alt="">
         <div class="product-description">
-          <h1 class="product-title">${element.nome}</h1>
+          <h1 class="product-title" data-item="name">${element.nome}</h1>
           <form class="product-form" action="////#">
             <button class="product-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
             <legend class="product-value">R$ ${element.preco}</legend>

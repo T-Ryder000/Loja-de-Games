@@ -57,14 +57,19 @@
   cursor: grab;
   scroll-behavior: smooth;
   scrollbar-width: none; /*Para remoção do scroll no firefox*/
-
 }
 
 .product-container-item::-webkit-scrollbar { /*Para remoção do scroll no chrome */
   display: none;
 }
 
+.product-item-hide{ /*Classe que irá esconder o produto mediante a pesquisa no input de texto da sessao header*/
+  visibility: hidden;
+  display: none;
+}
+
 .product-item{
+  visibility: visible;
   width: calc(100% / 5);
   display: flex;
   justify-content: center;

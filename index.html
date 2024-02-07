@@ -22,14 +22,14 @@
             </a>
           </li>
           <li class="search-container-header">
-            <form class="search-form-header" action="#/">
+            <form class="search-form-header" action="#/" data-form="search">
               <button
                 class="fa-solid fa-magnifying-glass search-button-header"
                 data-button="search"
               ></button>
               <input
                 class="search-bar-header"
-                type="text"
+                type="search"
                 placeholder="Pesquisar loja"
                 data-bar="search"
               />
@@ -117,8 +117,8 @@
           createAndAddProductSection(games)
           addsSliderInteractions()
           addsCarouselInteractions()
-          searchProducts()
-          ScrollEventOnClick(games) //Precisará dos dados json para realizar a tarefa
+          ScrollEventOnClick()
+          searchProducts(games) //Precisará dos dados json para realizar a tarefa
           pageProduct(games)
         })
         .catch(error => {
