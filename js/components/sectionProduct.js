@@ -1,34 +1,33 @@
-const sectionProduct = games => {
-  const { collections } = games
-
+const createAndAddProductSection= games => {
+ 
+  //variavel do container que irá conter as seções e seus produtos
   const sectionProducts = document.querySelector('.section-products')
-
   // Verifica se o elemento .section-products foi encontrado no documento.
   if (!sectionProducts) {
     console.error('Elemento .section-products não foi encontrado no documento.')
     return
   }
-
-  // Criação de seções
+  // Cria as seções de produtos e add a pagina principal
   for (let i = 1; i <= 3; i++) {
     const productContainerItem = document.createElement('div')
     productContainerItem.classList.add('products-container')
-
     productContainerItem.innerHTML = `
       <button class="fa-solid fa-chevron-left btn-previous" data-button="previous"></button>
       <button class="fa-solid fa-chevron-right btn-next" data-button="next"></button>
       <ul class="product-container-item" data-container="carousel${i}"></ul>
     `
-
     sectionProducts.appendChild(productContainerItem)
   }
 
-  // Adiciona itens as seções.
+  //Pega os dados do arquivo json passados pelo parametro da função geral
+  const { collections } = games
+  //varre os dados json e os incrementa nos elementos da seção
   collections.forEach(element => {
+
+    // Cria elementos das seções
     const itemElement = document.createElement('li')
     itemElement.classList.add('product-item')
     itemElement.setAttribute('data-item', 'carousel')
-
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
         <img class="product-image" src="${element.capa}" alt="">
@@ -42,7 +41,6 @@ const sectionProduct = games => {
       </a>
     `
 
-    
     // Adiciona os elementos dos itens as seções.
     if (element.id < 5) {
       sectionProducts
@@ -60,4 +58,4 @@ const sectionProduct = games => {
   })
 }
 
-export default sectionProduct
+export default createAndAddProductSection

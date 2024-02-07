@@ -1,4 +1,4 @@
-const scrollar=()=>{
+const ScrollEventOnClick=()=>{
 
 
 const buttonScrollar = document.querySelector('[data-button="scrollar"]');//Botão que scrolla a pagina
@@ -16,4 +16,4 @@ window.addEventListener('scroll', function() {
 
 }
 
-export default scrollar
+export default ScrollEventOnClick

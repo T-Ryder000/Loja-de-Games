@@ -1,4 +1,4 @@
-const slider = () => {
+const addsSliderInteractions = () => {
   //Variaveis do codigo
 
   const slideContainer = document.querySelector('[data-container="poster"]')
@@ -95,4 +95,4 @@ const slider = () => {
   })
 }
 
-export default slider
+export default addsSliderInteractions

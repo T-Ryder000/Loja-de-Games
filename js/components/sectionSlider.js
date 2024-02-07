@@ -1,4 +1,4 @@
-const sectionSlider = games => {
+const createAndAddSliderSection = games => {
   const { collections } = games
 
   const lastSixElements = collections.length - 7 // variavel que condiciona o slider a mostrar sempre os ultimos 6 elementos do banco json
@@ -69,4 +69,4 @@ const sectionSlider = games => {
   })
 }
 
-export default sectionSlider
+export default createAndAddSliderSection

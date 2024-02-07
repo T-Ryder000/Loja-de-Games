@@ -1,5 +1,4 @@
-const home=()=>{
-
+const createMainPageTemplate = () => {
   //Aqui é a sessao principal da pagina, o home. Ela é criada e retornada para ser add por um appenchild no script principal( script.js).
 
   const sectionGeneral = document.createElement('section')
@@ -7,7 +6,7 @@ const home=()=>{
 
   const templateInitial = `
       <!-- Sessao do Slider inicial -->
-      <section class="section-init">  
+      <section class="section-slider" data-container="slider">  
       <div class="poster-container" data-container="poster">
       </div>
       <div class="wrapper" >
@@ -21,9 +20,9 @@ const home=()=>{
         <h2 class="section-products-title">Galeria de Jogos</h2>
       </section>
   `
-   sectionGeneral.innerHTML = templateInitial
+  sectionGeneral.innerHTML = templateInitial
 
-   return sectionGeneral
+  return sectionGeneral
 }
 
-export default home
+export default createMainPageTemplate

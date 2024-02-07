@@ -1,4 +1,4 @@
-const carouselProducts=()=>{
+const addsCarouselInteractions=()=>{
 
   const containerGeneral = document.querySelectorAll('.products-container') 
   
@@ -42,4 +42,4 @@ const carouselProducts=()=>{
 
   
   }
-  export default carouselProducts
+  export default addsCarouselInteractions
