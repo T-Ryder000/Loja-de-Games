@@ -17,7 +17,7 @@
           </li>
           <li class="return-home-header" data-return="return-home">
             <a class="return-text-header" href="#/">
-              <i class="fa-solid fa-arrow-left"></i>
+              <button class="fa-solid fa-arrow-left"></button>
               <spam class="return-text-header-hidden"> Página inicial</spam>
             </a>
           </li>
@@ -25,12 +25,17 @@
             <form class="search-form-header" action="#/">
               <button
                 class="fa-solid fa-magnifying-glass search-button-header"
+                data-button="search"
               ></button>
               <input
                 class="search-bar-header"
                 type="text"
                 placeholder="Pesquisar loja"
+                data-bar="search"
               />
+              <button
+                class="fa-solid fa-xmark search-delete-header-hide"
+              data-delete="value"></button>
             </form>
           </li>
         </ul>
@@ -86,31 +91,35 @@
       src="https://kit.fontawesome.com/730f4803c3.js"
       crossorigin="anonymous"
     ></script>
+
     <script type="module">
-      import home from './js/pages/home.js' //importando pagina home
+      //importando pagina que irá conter o slider e os produtos
+      import createMainPageTemplate from './js/pages/pageMain.js'
       const main = document.querySelector('[data-main="root"]') // variavél da main
       //Chama a pagina principal( o home ) ao carregar a pagina
       window.addEventListener('DOMContentLoaded', () => {
-        main.appendChild(home())
+        main.appendChild(createMainPageTemplate())
       })
 
       //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar a parte do html mediante o necessario.
       import { request } from './js/service/request.js'
-      import sectionSlider from './js/components/sectionSlider.js'
-      import sectionProduct from './js/components/sectionProduct.js'
-      import slider from './js/modules/Slider.js'
-      import products from './js/modules/products.js'
-      import scrollar from './js/modules/scrollar.js'
+      import createAndAddSliderSection from './js/components/sectionSlider.js'
+      import createAndAddProductSection from './js/components/sectionProduct.js'
+      import addsSliderInteractions from './js/modules/Slider.js'
+      import addsCarouselInteractions from './js/modules/products.js'
+      import ScrollEventOnClick from './js/modules/scrollar.js'
+      import searchProducts from './js/modules/search.js'
       import pageProduct from './js/pages/pageProduct.js'
       //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
       request()
         .then(games => {
-          sectionSlider(games)
-          sectionProduct(games)
-          slider()
-          products()
+          createAndAddSliderSection(games)
+          createAndAddProductSection(games)
+          addsSliderInteractions()
+          addsCarouselInteractions()
+          searchProducts()
+          ScrollEventOnClick(games) //Precisará dos dados json para realizar a tarefa
           pageProduct(games)
-          scrollar()
         })
         .catch(error => {
           console.log(`Houve um erro na chamada de dados: ${error}`)

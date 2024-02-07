@@ -41,6 +41,7 @@
 .search-form-header{
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
 }
 .search-form-header, .search-bar-header, .search-button-header{
   height: 100%;
@@ -52,6 +53,7 @@
 .search-bar-header{
   border-radius: 0 20px 20px 0;
   width: 80%;
+
 }
 .search-bar-header:focus{
   outline: none;
@@ -61,6 +63,28 @@
  border-radius: 20px 0 0 20px;
  cursor: pointer;
 }
+.search-delete-header-hide{
+  visibility: hidden;
+}
+.search-delete-header{
+  visibility: visible;
+  position: absolute;
+  right: 0;
+  height:100%;
+  padding-right: 5%;
+  background-color: transparent;
+  color: #888888;
+  font-size: 1em;
+  border:none;
+  cursor:pointer;
+}
+.search-delete-header:active{
+  transform: scale(0.95)
+}
+
+
+
+
 
 /* Ajustes de responsividade */
 

@@ -1,6 +1,5 @@
 /* Classe da seção inicial, que contém os posters e sliders dos posters */
-
-.section-init{
+.section-slider{
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -10,6 +9,10 @@
   max-height: 30em;
 }
 
+/*Classe que esconde a sessao do slider*/
+.section-slider-hide{
+  display: none;
+}
 
 /* poster geral e suas imagens*/
 
@@ -195,7 +198,7 @@
 /* Ajustes de responsividade */
 
 @media screen and (max-width:1110px){
-  .section-init{
+  .section-slider{
     width: 95%;
     gap: 5px;
   }
@@ -240,7 +243,7 @@
 
 
 @media screen and (max-width: 800px) {
-  .section-init{
+  .section-slider{
     margin-top: 30px;
     flex-direction: column;
   }
