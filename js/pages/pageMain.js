@@ -17,10 +17,14 @@ const createMainPageTemplate = () => {
       <section class="show-product" data-container="show-product">
       </section>
       <!-- Sessao da coleção de jogos -->
-      <section class="section-products">
+      <section class="section-products" data-container="products">
         <h2 class="section-products-title">Galeria de Jogos</h2>
       </section>
-  
+      <!-- Sessao da coleção de jogos encontrados na pesquisa -->
+      <section class="section-found-hide" data-container="found">
+        <h2 class="section-products-title">Encontrados</h2>
+        <ul class="section-found-search" data-search="found"></ul>
+      </section>
   `
   sectionGeneral.innerHTML = templateInitial
 

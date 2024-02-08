@@ -6,39 +6,46 @@ const searchProducts = games => {
   const deleteValueButton = document.querySelector('[data-delete="value"]')
   const containerSLider = document.querySelector('[data-container="slider"]')
 
+  const foundContainer = document.querySelector('[data-container="found"]')
+  const sectionProducts = document.querySelector('[data-container="products"]')
   //array de produtos que será incrementada
   let containerProductsNames = []
   collections.forEach(item => {
     containerProductsNames.push(item.nome.toLowerCase())
   })
-  const productsItems = document.querySelectorAll('[data-item="carousel"]')
+  const productsItems = document.querySelectorAll('[data-found="item"]')
 
 
   //Mostra os produtos encontrados e filtrados e esconde os que não foram.
   const showFilteredProducts = names => {
     productsItems.forEach(nameItem => {
-      const item = document.getElementById(`${nameItem.id}`);
-  
+      const item = document.getElementById(`${nameItem.id}`)
+
       if (names.includes(nameItem.id)) {
-        item.classList.remove('product-item-hide');
-        item.classList.add('product-item');
+        item.classList.remove('product-item-hide')
+        item.classList.add('product-item')
+
+        sectionProducts.classList = 'section-products-hide'
+        foundContainer.classList = 'section-found'
       } else {
-        item.classList.remove('product-item');
-        item.classList.add('product-item-hide');
+        item.classList.remove('product-item')
+        item.classList.add('product-item-hide')
       }
-    });
-  };
+    })
+  }
 
   //Restaura a exibição dos produtos mediante a barra de pesquisa está vazia
-  const productRestoration=() => {
+  const productRestoration = () => {
     productsItems.forEach(nameItem => {
       nameItem.classList = 'product-item'
       deleteValue()
+      sectionProducts.classList = 'section-products'
+      foundContainer.classList = 'section-found-hide'
     })
   }
 
   //função que filtra os dados e os passa adiante para serem mostrados
-  const filterSearchData=()=>{
+  const filterSearchData = () => {
     const nameValue = searchBar.value.toLowerCase()
     //Cria um novo array contendo os nomes que tenham relação com o valor q está sendo passado na barra de pesquisa.
     const foundNames = containerProductsNames.filter(name =>
@@ -51,7 +58,6 @@ const searchProducts = games => {
       productRestoration()
     }
   }
-
 
   //funcao que exibe a sessao slider mediante ter algo escrito ou nao no input de pesquisa
   const hideSlider = valueInput => {

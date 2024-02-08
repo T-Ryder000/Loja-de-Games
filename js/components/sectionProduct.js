@@ -1,7 +1,6 @@
-const createAndAddProductSection= games => {
- 
+const createAndAddProductSection = games => {
   //variavel do container que irá conter as seções e seus produtos
-  const sectionProducts = document.querySelector('.section-products')
+  const sectionProducts = document.querySelector('[data-container="products"]')
   // Verifica se o elemento .section-products foi encontrado no documento.
   if (!sectionProducts) {
     console.error('Elemento .section-products não foi encontrado no documento.')
@@ -23,12 +22,10 @@ const createAndAddProductSection= games => {
   const { collections } = games
   //varre os dados json e os incrementa nos elementos da seção
   collections.forEach(element => {
-
     // Cria elementos das seções
     const itemElement = document.createElement('li')
     itemElement.classList.add('product-item')
     itemElement.setAttribute('data-item', 'carousel')
-    itemElement.id = element.nome.toLowerCase() //o id é o proprio nome do produto, para ser comparado com o valor passado e encontrado no momento da pesquisa, mediante a logica do arquivo 'search.js', o toLowerCase é para que não haja diferenças e problemas entre os caracteres maiusulos e minusculos.
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
         <img class="product-image" src="${element.capa}" alt="">
@@ -41,6 +38,7 @@ const createAndAddProductSection= games => {
         </div>
       </a>
     `
+
 
     // Adiciona os elementos dos itens as seções.
     if (element.id < 5) {
@@ -56,6 +54,32 @@ const createAndAddProductSection= games => {
         .querySelector('[data-container="carousel3"]')
         .appendChild(itemElement)
     }
+
+
+    //copia para uso em outras partes do projeto, para que não haja conflito
+    const itemCopy = document.createElement('li')
+    itemCopy.classList.add('product-item')
+    itemCopy.setAttribute('data-found', 'item')
+    itemCopy.id = element.nome.toLowerCase() //o id é o proprio nome do produto, para ser comparado com o valor passado e encontrado no momento da pesquisa, mediante a logica do arquivo 'search.js', o toLowerCase é para que não haja diferenças e problemas entre os caracteres maiusulos e minusculos.
+    itemCopy.innerHTML = `
+      <a class="product-item-link" href="#page-top" data-link="item">
+        <img class="product-image" src="${element.capa}" alt="">
+        <div class="product-description">
+          <h1 class="product-title" data-item="name">${element.nome}</h1>
+          <form class="product-form" action="////#">
+            <button class="product-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+            <legend class="product-value">R$ ${element.preco}</legend>
+          </form>
+        </div>
+      </a>
+    `
+ 
+    //add produtos para section dos encontrados na pesquisa
+    const foundContaineritems = document.querySelector('[data-search="found"]')
+    foundContaineritems.appendChild(itemCopy)
+
+
+
   })
 }
 

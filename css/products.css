@@ -10,6 +10,25 @@
   scroll-behavior: smooth;
  } 
 
+ .section-products-hide{
+  display: none;
+ }
+
+ /*Container que mostra os produtos encontrados em pesquisa*/
+ .section-found{
+  display:block;
+  padding: 2em;
+ }
+ .section-found-hide{
+  display:none;
+ }
+ .section-found-search{
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ /******************/
+
  .section-products-title{
   padding: 10px;
   color: white;
