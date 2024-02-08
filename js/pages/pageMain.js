@@ -13,12 +13,14 @@ const createMainPageTemplate = () => {
         <ul class="slider-container" data-container="wrapper"></ul>
       </div> 
       </section>
+      <!-- Sessao de pagina do produto escondida -->
       <section class="show-product" data-container="show-product">
       </section>
       <!-- Sessao da coleção de jogos -->
       <section class="section-products">
         <h2 class="section-products-title">Galeria de Jogos</h2>
       </section>
+  
   `
   sectionGeneral.innerHTML = templateInitial
 

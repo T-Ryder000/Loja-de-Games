@@ -28,7 +28,7 @@ const createAndAddProductSection= games => {
     const itemElement = document.createElement('li')
     itemElement.classList.add('product-item')
     itemElement.setAttribute('data-item', 'carousel')
-    itemElement.id = element.id //para encontra no momento da pesquisa
+    itemElement.id = element.nome.toLowerCase() //o id é o proprio nome do produto, para ser comparado com o valor passado e encontrado no momento da pesquisa, mediante a logica do arquivo 'search.js', o toLowerCase é para que não haja diferenças e problemas entre os caracteres maiusulos e minusculos.
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
         <img class="product-image" src="${element.capa}" alt="">

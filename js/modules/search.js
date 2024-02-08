@@ -6,61 +6,53 @@ const searchProducts = games => {
   const deleteValueButton = document.querySelector('[data-delete="value"]')
   const containerSLider = document.querySelector('[data-container="slider"]')
 
+  //array de produtos que será incrementada
   let containerProductsNames = []
-
   collections.forEach(item => {
     containerProductsNames.push(item.nome.toLowerCase())
   })
-
   const productsItems = document.querySelectorAll('[data-item="carousel"]')
 
-  const showProduct = index => {
+
+  //Mostra os produtos encontrados e filtrados e esconde os que não foram.
+  const showFilteredProducts = names => {
     productsItems.forEach(nameItem => {
-      const item = document.getElementById(`${index}`)
+      const item = document.getElementById(`${nameItem.id}`);
+  
+      if (names.includes(nameItem.id)) {
+        item.classList.remove('product-item-hide');
+        item.classList.add('product-item');
+      } else {
+        item.classList.remove('product-item');
+        item.classList.add('product-item-hide');
+      }
+    });
+  };
 
-      if (index !== item.id) {
-        nameItem.classList = 'product-item-hide'
-      }
-      if (index !== item.id) {
-        item.classList = 'product-item'
-      }
-      if (index === '') {
-        item.classList = 'product-item'
-        deleteValue()
-      }
-    })
-  }
-
-  const hideProduct = index => {
+  //Restaura a exibição dos produtos mediante a barra de pesquisa está vazia
+  const productRestoration=() => {
     productsItems.forEach(nameItem => {
       nameItem.classList = 'product-item'
       deleteValue()
     })
   }
 
-  const showSearchResult = () => {
-    console.log(containerProductsNames)
+  //função que filtra os dados e os passa adiante para serem mostrados
+  const filterSearchData=()=>{
     const nameValue = searchBar.value.toLowerCase()
-
+    //Cria um novo array contendo os nomes que tenham relação com o valor q está sendo passado na barra de pesquisa.
     const foundNames = containerProductsNames.filter(name =>
       name.includes(nameValue)
     )
-
-    const index = containerProductsNames.indexOf(foundNames[0])
-
-    if (foundNames.length > 0) {
-      console.log(index)
-      showProduct(index)
+    if (foundNames.length > -1) {
+      showFilteredProducts(foundNames)
     }
     if (nameValue === '') {
-      hideProduct(index)
+      productRestoration()
     }
-
-    // containerProductsNames.some(name =>name.includes(searchBar.value.toLowerCase()))
-
-    hideSlider(searchBar.value)
-    showButtonDeleteValue(searchBar.value)
   }
+
+
   //funcao que exibe a sessao slider mediante ter algo escrito ou nao no input de pesquisa
   const hideSlider = valueInput => {
     if (valueInput !== '') {
@@ -90,10 +82,9 @@ const searchProducts = games => {
   }
 
   const startOperation = () => {
-    showSearchResult()
-    // collections.forEach(element => {
-
-    // })
+    filterSearchData()
+    hideSlider(searchBar.value)
+    showButtonDeleteValue(searchBar.value)
   }
 
   //Tira o efeito de envio e carregamento do form
