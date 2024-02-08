@@ -3,7 +3,9 @@ const pageProduct = games => {
 
   const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') // sessao da coleção de jogos
+  const foundContainer = document.querySelector('[data-container="found"]')// sessao da coleção de jogos do campo de busca
   const product = document.querySelectorAll('[data-item="carousel"]') //variavel dos Jogos da coleção
+  const productSearch = document.querySelectorAll('[data-found="item"]') // variavel dos jogos do campo de busca
   const returnButton = document.querySelector('[data-return="return-home"]') // botão escondido, que aparece quando se está na pagina do jogo, para ele retornar ao home.
   const showProduct = document.querySelector('[data-container="show-product"]') //sessao escondida da pagina que mostra os dados do produto, ela aparecerá quando houver um click em um item no home.
 
@@ -42,7 +44,7 @@ const pageProduct = games => {
       returnButton.style.visibility = 'visible'
       showProduct.style.display = 'flex'
       containerSLider.classList = 'section-slider-hide'
-      sectionProducts.style.display = 'none'
+      sectionProducts.classList = 'section-products-hide'
     }
 
     //Varre cada produto e chama as funções mediante o produto que for clicado
@@ -50,9 +52,17 @@ const pageProduct = games => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
+        foundContainer.classList = 'section-found-hide'
+      })
+    })
 
-        // const gameTrailerIframe = document.querySelector('.game-trailer-iframe iframe')
-        // pausarIframe(gameTrailerIframe)
+    //Varre cada produto e chama as funções mediante o produto que for clicado
+    //( em relação aos produtos do campo de busca)
+    productSearch.forEach((item, index) => {
+      item.addEventListener('click', function () {
+        dataProcessing(index)
+        showAndHide()
+        foundContainer.classList = 'section-found-hide'
       })
     })
 
@@ -70,7 +80,7 @@ const pageProduct = games => {
       returnButton.style.visibility = 'hidden'
       showProduct.style.display = 'none'
       containerSLider.classList="section-slider"
-      sectionProducts.style.display = 'flex'
+      sectionProducts.classList="section-products"
 
       product.forEach((item)=>{ //para limpeza da pesquisa e atribuir novamente classes visiveis aos produtos
         const searchBar = document.querySelector('[data-bar="search"]')

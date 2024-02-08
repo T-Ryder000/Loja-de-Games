@@ -22,7 +22,7 @@ const createMainPageTemplate = () => {
       </section>
       <!-- Sessao da coleção de jogos encontrados na pesquisa -->
       <section class="section-found-hide" data-container="found">
-        <h2 class="section-products-title">Encontrados</h2>
+        <h2 class="section-products-title" data-search="result-text"></h2>
         <ul class="section-found-search" data-search="found"></ul>
       </section>
   `

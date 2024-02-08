@@ -31,7 +31,11 @@
   color: white;
   padding: 0 10px;
 }
-
+.return-icon-header{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
 
 /* Barra de pesquisa */
 

@@ -7,6 +7,7 @@ const searchProducts = games => {
   const containerSLider = document.querySelector('[data-container="slider"]')
 
   const foundContainer = document.querySelector('[data-container="found"]')
+  const resultText = document.querySelector('[data-search="result-text"]')
   const sectionProducts = document.querySelector('[data-container="products"]')
   //array de produtos que será incrementada
   let containerProductsNames = []
@@ -14,7 +15,6 @@ const searchProducts = games => {
     containerProductsNames.push(item.nome.toLowerCase())
   })
   const productsItems = document.querySelectorAll('[data-found="item"]')
-
 
   //Mostra os produtos encontrados e filtrados e esconde os que não foram.
   const showFilteredProducts = names => {
@@ -27,6 +27,8 @@ const searchProducts = games => {
 
         sectionProducts.classList = 'section-products-hide'
         foundContainer.classList = 'section-found'
+
+        resultText.innerHTML = `Quantidade de produtos encontrados: ${names.length}`
       } else {
         item.classList.remove('product-item')
         item.classList.add('product-item-hide')
