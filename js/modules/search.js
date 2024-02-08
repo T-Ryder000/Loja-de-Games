@@ -18,6 +18,8 @@ const searchProducts = games => {
 
   //Mostra os produtos encontrados e filtrados e esconde os que não foram.
   const showFilteredProducts = names => {
+    resultText.innerHTML = `Quantidade de produtos encontrados: ${names.length}`
+    
     productsItems.forEach(nameItem => {
       const item = document.getElementById(`${nameItem.id}`)
 
@@ -28,10 +30,10 @@ const searchProducts = games => {
         sectionProducts.classList = 'section-products-hide'
         foundContainer.classList = 'section-found'
 
-        resultText.innerHTML = `Quantidade de produtos encontrados: ${names.length}`
       } else {
         item.classList.remove('product-item')
         item.classList.add('product-item-hide')
+
       }
     })
   }
