@@ -14,7 +14,7 @@ const createMainPageTemplate = () => {
       </div> 
       </section>
       <!-- Sessao de pagina do produto escondida -->
-      <section class="show-product" data-container="show-product">
+      <section class="show-product-hide" data-container="show-product">
       </section>
       <!-- Sessao da coleção de jogos -->
       <section class="section-products" data-container="products">
@@ -22,7 +22,7 @@ const createMainPageTemplate = () => {
       </section>
       <!-- Sessao da coleção de jogos encontrados na pesquisa -->
       <section class="section-found-hide" data-container="found">
-        <h2 class="section-products-title" data-search="result-text"></h2>
+        <h2 class="section-found-title" data-search="result-text"></h2>
         <ul class="section-found-search" data-search="found"></ul>
       </section>
   `

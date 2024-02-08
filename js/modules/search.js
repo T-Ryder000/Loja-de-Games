@@ -19,7 +19,7 @@ const searchProducts = games => {
   //Mostra os produtos encontrados e filtrados e esconde os que não foram.
   const showFilteredProducts = names => {
     resultText.innerHTML = `Quantidade de produtos encontrados: ${names.length}`
-    
+
     productsItems.forEach(nameItem => {
       const item = document.getElementById(`${nameItem.id}`)
 
@@ -29,11 +29,9 @@ const searchProducts = games => {
 
         sectionProducts.classList = 'section-products-hide'
         foundContainer.classList = 'section-found'
-
       } else {
         item.classList.remove('product-item')
         item.classList.add('product-item-hide')
-
       }
     })
   }
@@ -42,7 +40,7 @@ const searchProducts = games => {
   const productRestoration = () => {
     productsItems.forEach(nameItem => {
       nameItem.classList = 'product-item'
-      deleteValue()
+      // deleteValue()
       sectionProducts.classList = 'section-products'
       foundContainer.classList = 'section-found-hide'
     })
@@ -83,12 +81,15 @@ const searchProducts = games => {
   }
   //funcao que deleta o texto da barra de pesquisar pelo botao de delete
   const deleteValue = () => {
-    productsItems.forEach(e => {
-      e.classList = 'product-item'
-    })
-
+    // productsItems.forEach(e => {
+    //   e.classList = 'product-item'
+    // })
     searchBar.value = ''
     hideSlider(searchBar.value)
+    showButtonDeleteValue(searchBar.value)
+
+    sectionProducts.classList = 'section-products'
+    foundContainer.classList = 'section-found-hide'
   }
 
   const startOperation = () => {

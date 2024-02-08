@@ -16,6 +16,8 @@
 
  /*Container que mostra os produtos encontrados em pesquisa*/
  .section-found{
+  width: 85%;
+  margin: 0 auto;
   display:block;
   padding: 2em;
  }
@@ -25,6 +27,12 @@
  .section-found-search{
   display: flex;
   flex-wrap: wrap;
+ }
+ .section-found-title{
+  padding: 10px;
+  margin: 0 0 40px;
+  font-size: 1em;
+  color: white;
  }
 
  /******************/
@@ -171,6 +179,13 @@
   .section-products{
     margin-top: 20px;
   }
+  .section-found{
+    width: 95%;
+  }
+  .section-found-title{
+    font-size: 0.8em;
+  }
+
   .product-container-item{
       padding: 0.5em 0em 0.5em 0.5em;
   }

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body id="page-top">
+
+    <!-- Sessao de modal escondida -->
+    <section class="hide-modal" data-container="modal">
+    </section>
+
     <!-- Header -->
     <header class="page-header">
       <nav class="nav-container-header">
@@ -17,7 +22,10 @@
           </li>
           <li class="return-home-header" data-return="return-home">
             <a class="return-text-header" href="#/">
-              <button class="fa-solid fa-arrow-left return-icon-header" data-button="return"></button>
+              <button
+                class="fa-solid fa-arrow-left return-icon-header"
+                data-button="return"
+              ></button>
               <spam class="return-text-header-hidden"> Página inicial</spam>
             </a>
           </li>
@@ -35,7 +43,8 @@
               />
               <button
                 class="fa-solid fa-xmark search-delete-header-hide"
-              data-delete="value"></button>
+                data-delete="value"
+              ></button>
             </form>
           </li>
         </ul>
@@ -50,6 +59,8 @@
         ><button class="fa-solid fa-arrow-up button-scrollar"></button
       ></a>
     </main>
+
+
 
     <!-- Footer -->
 
@@ -100,28 +111,28 @@
       window.addEventListener('DOMContentLoaded', () => {
         main.appendChild(createMainPageTemplate())
       })
-      // const returnButton = document.querySelector('[data-button="return"]')
-      // returnButton.addEventListener('click', function(){
-      //   main.appendChild(createMainPageTemplate())
-      // })
 
       //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar a parte do html mediante o necessario.
       import { request } from './js/service/request.js'
       import createAndAddSliderSection from './js/components/sectionSlider.js'
       import createAndAddProductSection from './js/components/sectionProduct.js'
+      import createModal from './js/components/modal.js'
       import addsSliderInteractions from './js/modules/Slider.js'
       import addsCarouselInteractions from './js/modules/products.js'
       import ScrollEventOnClick from './js/modules/scrollar.js'
       import searchProducts from './js/modules/search.js'
+      import showModalAndGoToCart from './js/modules/addCart.js'
       import pageProduct from './js/pages/pageProduct.js'
       //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
       request()
         .then(games => {
           createAndAddSliderSection(games)
           createAndAddProductSection(games)
+          createModal(games)
           addsSliderInteractions()
           addsCarouselInteractions()
           ScrollEventOnClick()
+          showModalAndGoToCart()
           searchProducts(games) //Precisará dos dados json para realizar a tarefa
           pageProduct(games)
         })

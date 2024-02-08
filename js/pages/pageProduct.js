@@ -3,7 +3,7 @@ const pageProduct = games => {
 
   const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') // sessao da coleção de jogos
-  const foundContainer = document.querySelector('[data-container="found"]')// sessao da coleção de jogos do campo de busca
+  const foundContainer = document.querySelector('[data-container="found"]') // sessao da coleção de jogos do campo de busca
   const product = document.querySelectorAll('[data-item="carousel"]') //variavel dos Jogos da coleção
   const productSearch = document.querySelectorAll('[data-found="item"]') // variavel dos jogos do campo de busca
   const returnButton = document.querySelector('[data-return="return-home"]') // botão escondido, que aparece quando se está na pagina do jogo, para ele retornar ao home.
@@ -42,7 +42,7 @@ const pageProduct = games => {
     //Responsavel por mostrar o produto e o botao return, ao mesmo tempo que esconde o resto do componentes do main(slider e coleção de produtos)
     const showAndHide = () => {
       returnButton.style.visibility = 'visible'
-      showProduct.style.display = 'flex'
+      showProduct.classList = 'show-product'
       containerSLider.classList = 'section-slider-hide'
       sectionProducts.classList = 'section-products-hide'
     }
@@ -78,13 +78,14 @@ const pageProduct = games => {
       const gameTrailer = document.querySelector('.game-trailer') // variavel do video para o trailer
       pauseVideo(gameTrailer)
       returnButton.style.visibility = 'hidden'
-      showProduct.style.display = 'none'
-      containerSLider.classList="section-slider"
-      sectionProducts.classList="section-products"
+      showProduct.classList = 'show-product-hide'
+      containerSLider.classList = 'section-slider'
+      sectionProducts.classList = 'section-products'
 
-      product.forEach((item)=>{ //para limpeza da pesquisa e atribuir novamente classes visiveis aos produtos
+      product.forEach(item => {
+        //para limpeza da pesquisa e atribuir novamente classes visiveis aos produtos
         const searchBar = document.querySelector('[data-bar="search"]')
-        searchBar.value = '' 
+        searchBar.value = ''
         item.classList = 'product-item'
       })
     })

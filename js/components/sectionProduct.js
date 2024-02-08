@@ -31,8 +31,8 @@ const createAndAddProductSection = games => {
         <img class="product-image" src="${element.capa}" alt="">
         <div class="product-description">
           <h1 class="product-title" data-item="name">${element.nome}</h1>
-          <form class="product-form" action="////#">
-            <button class="product-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+          <form class="product-form" data-form="product" action="">
+            <button class="product-add" data-button="add-cart"><i class="fa-solid fa-cart-plus"></i> Add</button>
             <legend class="product-value">R$ ${element.preco}</legend>
           </form>
         </div>
@@ -66,8 +66,8 @@ const createAndAddProductSection = games => {
         <img class="product-image" src="${element.capa}" alt="">
         <div class="product-description">
           <h1 class="product-title" data-item="name">${element.nome}</h1>
-          <form class="product-form" action="////#">
-            <button class="product-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+          <form class="product-form" data-form="product" action="">
+            <button class="product-add" data-button="add-cart"><i class="fa-solid fa-cart-plus"></i> Add</button>
             <legend class="product-value">R$ ${element.preco}</legend>
           </form>
         </div>
