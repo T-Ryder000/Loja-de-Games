@@ -4,7 +4,7 @@ const showModalAndGoToCart = () => {
   const btnAddCartCopy = document.querySelectorAll(
     '[data-button="add-cart-copy"]'
   ) //para os produtos na pesquisa
-  // const formAddCart = document.querySelector('[data-form="product"]')
+  const formAddCart = document.querySelectorAll('[data-form="product"]')
 
   const containerPageProduct = document.querySelector(
     '[data-container="show-product"]'
@@ -35,7 +35,7 @@ const showModalAndGoToCart = () => {
     e.preventDefault()
   }
 
-  formProduct.forEach(form => {
+  formAddCart.forEach(form => {
     form.addEventListener('submit', function (e) {
       preventDefault(e)
     })
