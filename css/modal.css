@@ -34,7 +34,7 @@
 .product-modal{
   display:flex;
   gap: 1em;
-  padding: 2em 1em;
+  padding: 1em 1em;
   border: 1px solid black;
   border-radius: 0.2em;
 }

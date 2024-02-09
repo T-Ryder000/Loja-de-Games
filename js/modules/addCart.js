@@ -17,11 +17,6 @@ const showModalAndGoToCart = () => {
 
   //mostrar modal com destino ao carrinho, ou continuar comprando
   const showModal = () => {
-    const productTopLink = document.querySelectorAll('[data-link="item"]')
-    productTopLink.forEach(e => {
-      e.href = ''
-    }) //observação
-
     bodyContent.classList = 'body-modal-pause' // muda classe para parar rolamento da pagina em determinada dimensao
     containerModal.classList = 'show-modal' // muda classe para mostrar modal
 
