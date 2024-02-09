@@ -10,14 +10,15 @@ const showModalAndGoToCart = () => {
     '[data-container="show-product"]'
   )
 
-  const formProduct = document.querySelectorAll('[data-form="product]')
 
   const addCart = () => {
+    const bodyContent = document.querySelector('[data-body="content"]')
     const productTopLink = document.querySelectorAll('[data-link="item"]')
     productTopLink.forEach(e => {
       console.log(e)
       e.href = ''
     }) //observação
+    bodyContent.classList='body-modal-pause'
 
     
     containerPageProduct.classList = 'show-product-hide'
