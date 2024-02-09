@@ -28,7 +28,7 @@ const createAndAddProductSection = games => {
     itemElement.setAttribute('data-item', 'carousel')
     itemElement.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
-        <img class="product-image" src="${element.capa}" alt="">
+        <img class="product-image" data-image="product" src="${element.capa}" alt="">
         <div class="product-description">
           <h1 class="product-title" data-item="name">${element.nome}</h1>
           <form class="product-form" data-form="product" action="">
@@ -63,11 +63,11 @@ const createAndAddProductSection = games => {
     itemCopy.id = element.nome.toLowerCase() //o id é o proprio nome do produto, para ser comparado com o valor passado e encontrado no momento da pesquisa, mediante a logica do arquivo 'search.js', o toLowerCase é para que não haja diferenças e problemas entre os caracteres maiusulos e minusculos.
     itemCopy.innerHTML = `
       <a class="product-item-link" href="#page-top" data-link="item">
-        <img class="product-image" src="${element.capa}" alt="">
+        <img class="product-image" data-image="productCopy" src="${element.capa}" alt="">
         <div class="product-description">
           <h1 class="product-title" data-item="name">${element.nome}</h1>
           <form class="product-form" data-form="product" action="">
-            <button class="product-add" data-button="add-cart"><i class="fa-solid fa-cart-plus"></i> Add</button>
+            <button class="product-add" data-button="add-cart-copy"><i class="fa-solid fa-cart-plus"></i> Add</button>
             <legend class="product-value">R$ ${element.preco}</legend>
           </form>
         </div>

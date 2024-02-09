@@ -1,6 +1,9 @@
 const pageProduct = games => {
   // variaveis
 
+  const clickPage = document.querySelectorAll('[data-image="product"]') //variaveis da imagem do jogo para quando clicado, mostrar a pagina do jogo
+  const clickPageCopy = document.querySelectorAll('[data-image="productCopy"]')//variaveis da imagem do jogo do campo de busca para quando clicado, mostrar a pagina do jogo
+
   const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') // sessao da coleção de jogos
   const foundContainer = document.querySelector('[data-container="found"]') // sessao da coleção de jogos do campo de busca
@@ -12,6 +15,7 @@ const pageProduct = games => {
   const gameContainer = document.createElement('div') //Criando div que será incrementada na sessao escondida do produto.
   gameContainer.classList.add('game-container') //Add uma classe a essa div
   showProduct.appendChild(gameContainer) //add essa div a sessao escondida "ShowProduct"
+
 
   //processamento
 
@@ -48,7 +52,7 @@ const pageProduct = games => {
     }
 
     //Varre cada produto e chama as funções mediante o produto que for clicado
-    product.forEach((item, index) => {
+    clickPage.forEach((item, index) => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
@@ -58,7 +62,7 @@ const pageProduct = games => {
 
     //Varre cada produto e chama as funções mediante o produto que for clicado
     //( em relação aos produtos do campo de busca)
-    productSearch.forEach((item, index) => {
+    clickPageCopy.forEach((item, index) => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
