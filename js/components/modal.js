@@ -28,7 +28,7 @@ const createModal = games => {
         </div>
         <form class="form-modal" data-form="modal">
           <button class="button-modal-continue" data-button="continue">Continuar Comprando</button>
-          <button class="button-modal-finish">Finalizar compra</button>
+          <button class="button-modal-finish" data-button="finish">Finalizar compra</button>
         </form>`
       }
     }
