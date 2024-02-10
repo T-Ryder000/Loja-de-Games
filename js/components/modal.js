@@ -1,3 +1,5 @@
+import saveProduct from '../modules/saveLocalStorage.js'
+
 const createModal = games => {
   const { collections } = games
 
@@ -11,8 +13,6 @@ const createModal = games => {
   )
   const cardModal = document.createElement('div')
   cardModal.classList = 'card-modal'
-
-   
 
   collections.forEach(element => {
     const showClickedProduct = index => {
@@ -33,10 +33,8 @@ const createModal = games => {
       }
     }
 
-    // let gameForCart
-
+    // cria e envia dados para serem salvos no local storage
     const createProductToSave = index => {
-      let cartItems = []
       if (index === element.id) {
         const gameForCart = {
           nome: `${element.nome}`,
@@ -44,16 +42,10 @@ const createModal = games => {
           capa: `${element.capa}`,
           id: index
         }
-        cartItems.push(JSON.stringify(gameForCart))
-        saveProduct(cartItems)
-      }
-      localStorage.setItem('index', index )
-    
-    }
 
-    const saveProduct = cartItems => {
-      console.log(cartItems)
-      localStorage.setItem('cartItems', cartItems )
+        //função importada
+        saveProduct(gameForCart)
+      }
     }
 
     btnAddCart.forEach((button, index) => {

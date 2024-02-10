@@ -1,3 +1,4 @@
+
 const showModalAndGoToCart = () => {
   const containerModal = document.querySelector('[data-container="modal"]')
   const btnAddCart = document.querySelectorAll('[data-button="add-cart"]') //para os produtos na main
@@ -14,8 +15,8 @@ const showModalAndGoToCart = () => {
     sectionCart.classList = 'section-shopping-cart'
 
     //para lidar com a pagina principal, para que ela não seja mostrada enquanto a sessao do carrinho de compras estiver sendo exibida (artimanhas)
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
     bodyContent.classList = 'body-cart-pause'
   }
 
@@ -43,6 +44,7 @@ const showModalAndGoToCart = () => {
     //mostrar sessao do carrinho para finalização da compra
     const buttonForCart = document.querySelector('[data-button="finish"]')
     buttonForCart.addEventListener('click', showShoppingCart)
+
   }
 
   //botões tanto dos produtos da sessao main, como da barra de pesquisa

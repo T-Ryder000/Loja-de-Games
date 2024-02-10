@@ -53,10 +53,24 @@
   font-size: 1em;
 }
 
+.cart-product{
+  justify-content: space-between;
+
+}
+
 .cart-details{
   align-items: center;
   gap: 1em;
+
 }
+
+.cart-manager{
+  max-width: 50%;
+  align-items: center;
+  justify-content: end;
+  gap: 1em;
+}
+
 
 .cart-img-product{
   width: calc(100%/10);
@@ -69,14 +83,14 @@
   padding: 0.5em;
   outline: none;
 }
+
+.cart-value-product{
+  white-space: nowrap;
+}
+
 .cart-delete-product{
   cursor: pointer;
   color: rgb(255, 66, 66);
-}
-.cart-manager{
-  width: 40%;
-  align-items: center;
-  justify-content: space-between;
 }
 
 

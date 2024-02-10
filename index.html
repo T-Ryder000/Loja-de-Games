@@ -124,7 +124,6 @@
       import searchProducts from './js/modules/search.js'
       import showModalAndGoToCart from './js/modules/addCart.js'
       import pageProduct from './js/pages/pageProduct.js'
-      import createPageCart from './js/pages/pageCart.js'
       //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
       request()
         .then(games => {
@@ -137,7 +136,6 @@
           showModalAndGoToCart()
           searchProducts(games) //Precisará dos dados json para realizar a tarefa
           pageProduct(games)
-          createPageCart(games) 
         })
         .catch(error => {
           console.log(`Houve um erro na chamada de dados: ${error}`)
