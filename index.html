@@ -16,7 +16,7 @@
       <nav class="nav-container-header">
         <ul class="list-container-header">
           <li class="logo-container-header">
-            <img class="logo-image-header" src="./images/Game-Logo.png" />
+            <img class="logo-image-header" data-img='logo' src="./images/Game-Logo.png" />
           </li>
           <li class="return-home-header" data-return="return-home">
             <a class="return-text-header" href="#/">
@@ -58,13 +58,18 @@
       ></a>
     </main>
 
+    <!-- sessao do carrinho de compras escondida  -->
+    <section class="section-shopping-cart-hide" data-section="cart">
+      <h2 class="text-checkout-cart">CONFIRA</h2>
+    </section>
+
     <!-- Footer -->
 
     <footer class="page-footer">
       <!-- Logo do rodapé -->
       <div class="containers-footer">
         <a href="#page-top" class="link-footer"
-          ><img class="logo-footer" src="./images/Game-Logo.png"
+          ><img class="logo-footer" data-img='logo' src="./images/Game-Logo.png"
         /></a>
       </div>
       <!-- Creditos ao desenvolvedor e suas redes sociais -->
@@ -92,10 +97,7 @@
       </div>
     </footer>
 
-    <!-- sessao do carrinho de compras escondida  -->
-    <section class="section-shopping-cart-hide" data-section="cart">
-      <h2 class="text-checkout-cart">CONFIRA</h2>
-    </section>
+
 
     <!-- Scripts -->
 
@@ -122,7 +124,7 @@
       import addsCarouselInteractions from './js/modules/products.js'
       import ScrollEventOnClick from './js/modules/scrollar.js'
       import searchProducts from './js/modules/search.js'
-      import showModalAndGoToCart from './js/modules/addCart.js'
+      import showModalAndGoToCart from './js/modules/showModalAndGoToCart.js'
       import pageProduct from './js/pages/pageProduct.js'
       //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
       request()

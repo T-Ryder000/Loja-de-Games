@@ -33,7 +33,7 @@ const createModal = games => {
       }
     }
 
-    // cria e envia dados para serem salvos no local storage
+    //Cria objeto e envia dados para serem salvos no local storage
     const createProductToSave = index => {
       if (index === element.id) {
         const gameForCart = {
@@ -42,11 +42,10 @@ const createModal = games => {
           capa: `${element.capa}`,
           id: index
         }
-
         //função importada
         saveProduct(gameForCart)
+        }
       }
-    }
 
     btnAddCart.forEach((button, index) => {
       button.addEventListener('click', function () {

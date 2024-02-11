@@ -1,4 +1,5 @@
-import createPageCart from '../pages/pageCart.js'
+
+import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
 const saveProduct = gameForCart => {
   let cartItems = []
@@ -11,17 +12,13 @@ const saveProduct = gameForCart => {
     // Se cartItems não for uma array (pode ser nulo ou undefined), inicializamos como uma array vazia
     cartItems = []
   }
+
   cartItems.push(gameForCart)
   localStorage.setItem('cartItems', JSON.stringify(cartItems))
 
-    const containerCart = document.querySelector('[data-container="cart"]')
-    if (containerCart) {
-      containerCart.innerHTML = ''
-    }
-    createPageCart()
-
-
-  
+  resetAndDisplayPageCart()
 }
 
+
 export default saveProduct
+

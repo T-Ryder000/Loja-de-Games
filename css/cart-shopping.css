@@ -1,10 +1,4 @@
 
-/*para parar o rolamento da pagina, e evitar que a page do carrinho de compras scrolle e mostre os produtos da pagina logo abaixo*/
-.body-cart-pause{
-  overflow: hidden;
-}
-
-
 /* esconde sessao */
 .section-shopping-cart-hide{
   display: none;
@@ -14,17 +8,16 @@
 .section-shopping-cart{
   background-color: #121212;
   color: white;
-  position: absolute;
-  top: 0;
   z-index: 10;
   width: 100%;
-  height: 100vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1em 0 3em;
 }
 .text-checkout-cart{
-  padding: 2em;
+  padding: 1em;
 }
 .container-cart{
   display: flex;
