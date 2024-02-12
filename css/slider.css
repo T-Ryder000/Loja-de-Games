@@ -98,6 +98,7 @@
   font-size: 0.8em;
 }
 .poster-description-text2{
+  font-size: 0.7em;
   max-width: 50%;
 }
 
@@ -210,7 +211,7 @@
     font-size: 2em;
   }
   .poster-description-text2{
-    max-width: 80%;
+    max-width: 60%;
   }
   .poster-description-text1, 
   .poster-acquire-text{

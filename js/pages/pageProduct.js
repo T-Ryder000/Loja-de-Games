@@ -9,8 +9,8 @@ const pageProduct = games => {
 
   //Sections e pages
 
-  const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
-  const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
+  const sectionSlider = document.querySelector('[data-container="slider"]')// Sessao do slider da pagina
+  const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const sectionFound = document.querySelector('[data-container="found"]') //Sessao da coleção de jogos do campo de busca
   const pageProduct = document.querySelector('[data-container="show-product"]') //page do product
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
@@ -57,7 +57,7 @@ const pageProduct = games => {
     const showAndHide = () => {
       returnButton.style.visibility = 'visible'
       pageProduct.classList = 'show-product'
-      containerSLider.classList = 'section-slider-hide'
+      sectionSlider.classList = 'section-slider-hide'
       sectionProducts.classList = 'section-products-hide'
     }
 
@@ -67,7 +67,7 @@ const pageProduct = games => {
       pauseVideo(gameTrailer)
       returnButton.style.visibility = 'hidden'
       pageProduct.classList = 'show-product-hide'
-      containerSLider.classList = 'section-slider'
+      sectionSlider.classList = 'section-slider'
       sectionProducts.classList = 'section-products'
       //para limpeza da barra de pesquisa
       const searchBar = document.querySelector('[data-bar="search"]')
@@ -91,7 +91,7 @@ const pageProduct = games => {
           preco: `${element.preco}`,
           capa: `${element.capa}`,
           id: index,
-          numeroDoSelect: 1 
+          numeroDoSelect: 1
         }
         //função importada
         saveProduct(gameForCart)
@@ -103,7 +103,7 @@ const pageProduct = games => {
       //mostrar page do carrinho de compras
       pageCart.classList = 'section-shopping-cart'
       returnButton.style.visibility = 'visible'
-      containerSLider.classList = 'section-slider-hide'
+      sectionSlider.classList = 'section-slider-hide'
       sectionProducts.classList = 'section-products-hide'
     }
 

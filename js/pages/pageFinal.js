@@ -1,4 +1,4 @@
-const pageFinal = () => {
+const createPageFinal = () => {
   const modal = document.querySelector('[data-container="modal"]') //modal da pagina
   const pageCart = document.querySelector('[data-section="cart"]') //page do carrinho de compras
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
@@ -8,28 +8,26 @@ const pageFinal = () => {
     '[data-button="finalize-payment"]'
   ) //button para finalizar as compras
 
-  const pageToThank = document.querySelector('[data-container="page-final"]')//pagina final de agradecimento
-  const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
-  const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
-
+  const pageFinal = document.querySelector('[data-container="page-final"]') //pagina final de agradecimento
+  const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
+  const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
 
   const resetContent = () => {
     const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
-    if (paymentCard.value !== "Nenhum") {
+    if (paymentCard.value !== 'Nenhum') {
       modal.classList = 'hide-modal'
       pageCart.classList = 'section-shopping-cart-hide'
       returnButton.style.visibility = 'hidden'
       localStorage.clear()
-    }
-    else{
+    } else {
       alert('Escolha um cartão como opção de pagamento!')
     }
   }
 
-  const createThankYouPage=()=>{
-    pageToThank.classList = "page-to-thank"
+  const createThankYouPage = () => {
+    pageFinal.classList = 'page-to-thank'
 
-    pageToThank.innerHTML=`
+    pageFinal.innerHTML = `
     <div class="container-to-thank">
     <div class="text-thank">
       <h1 class="h1-thank">PARABÉNS!</h1>
@@ -51,23 +49,22 @@ const pageFinal = () => {
     commands()
   }
 
-
-  const returnHome=()=>{
-    pageToThank.classList = "page-to-thank-hide"
-    containerSLider.classList = "section-slider"
+  const returnHome = () => {
+    pageFinal.classList = 'page-to-thank-hide'
+    sectionSlider.classList = "section-slider"
     sectionProducts.classList = "section-products"
   }
 
-  const commands=()=>{
+  const commands = () => {
     const formThanks = document.querySelector('[data-form="thank"]')
     const buttonThank = document.querySelector('[data-button="thank"]')
-    formThanks.addEventListener('submit', function(e){
+    formThanks.addEventListener('submit', function (e) {
       e.preventDefault()
     })
     buttonThank.addEventListener('click', returnHome)
   }
 
-  const finish=()=>{
+  const finish = () => {
     resetContent()
     createThankYouPage()
   }
@@ -79,4 +76,4 @@ const pageFinal = () => {
   })
 }
 
-export default pageFinal
+export default createPageFinal

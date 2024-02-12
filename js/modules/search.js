@@ -15,6 +15,7 @@ const searchProducts = games => {
   //pages e sections
   const pageProduct = document.querySelector('[data-container="show-product"]') //page do product
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
+  const pageFinal = document.querySelector('[data-container="page-final"]') //pagina final de agradecimento
   const sectionSlider = document.querySelector('[data-container="slider"]') //Sessao do slider
   const sectionProducts = document.querySelector('[data-container="products"]') //Sessao dos produtos da main
   const sectionFound = document.querySelector('[data-container="found"]') //Sessao dos produtos da pesquisa
@@ -99,7 +100,8 @@ const searchProducts = games => {
     showButtonDeleteValue(searchBar.value)
     if (
       pageProduct.classList != 'show-product' &&
-      pageCart.classList != 'section-shopping-cart'
+      pageCart.classList != 'section-shopping-cart' &&
+      pageFinal.classList != 'page-to-thank'
     ) {
       hideSlider(searchBar.value)
       sectionProducts.classList = 'section-products'
@@ -111,6 +113,7 @@ const searchProducts = games => {
   const showProductFound = () => {
     pageProduct.classList = 'show-product-hide'
     pageCart.classList = 'section-shopping-cart-hide'
+    pageFinal.classList = 'page-to-thank-hide'
     filterSearchData()
     returnButton.style.visibility = 'hidden'
   }
@@ -122,7 +125,8 @@ const searchProducts = games => {
   const startOperation = () => {
     if (
       pageProduct.classList != 'show-product' &&
-      pageCart.classList != 'section-shopping-cart'
+      pageCart.classList != 'section-shopping-cart' &&
+      pageFinal.classList != 'page-to-thank'
     ) {
       filterSearchData()
       hideSlider(searchBar.value)

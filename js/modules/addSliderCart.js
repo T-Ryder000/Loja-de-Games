@@ -5,8 +5,8 @@ const addSliderCart = games => {
   const btnAddCartSlider = document.querySelectorAll('[data-button="button"]') //Produtos do slider
   const formAddCartSlider = document.querySelectorAll('[data-form="slider"]') //form dos sliders na main
 
-  const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
-  const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
+  const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
+  const sectionProducts = document.querySelector('[data-container="products"]')//Sessao da coleção de jogos
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
 
   //Functions
@@ -16,7 +16,7 @@ const addSliderCart = games => {
     //mostrar button de retornar ao main
     returnButton.style.visibility = 'visible'
     //esconder page main
-    containerSLider.classList = 'section-slider-hide'
+    sectionSlider.classList = 'section-slider-hide'
     sectionProducts.classList = 'section-products-hide'
     //mostrar page do carrinho de compras
     pageCart.classList = 'section-shopping-cart'
@@ -37,7 +37,7 @@ const addSliderCart = games => {
           preco: `${element.preco}`,
           capa: `${element.capa}`,
           id: index,
-          numeroDoSelect: 1 
+          numeroDoSelect: 1
         }
         //função importada
         saveProduct(gameForCart)

@@ -12,8 +12,8 @@ const showModalAndGoToCart = () => {
   //Body, sections, modal e pages
 
   const bodyContent = document.querySelector('[data-body="content"]') //Body
-  const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
-  const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
+  const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
+  const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const sectionFound = document.querySelector('[data-container="found"]') //Sessao dos produtos da pesquisa
   const containerModal = document.querySelector('[data-container="modal"]') //Container do modal
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
@@ -33,7 +33,7 @@ const showModalAndGoToCart = () => {
   //Ocultar page carrinho de compras
   const hideShoppingCart = () => {
     //mostra page main
-    containerSLider.classList = 'section-slider'
+    sectionSlider.classList = 'section-slider'
     sectionProducts.classList = 'section-products'
 
     //esconder page carrinho de compras
@@ -47,7 +47,7 @@ const showModalAndGoToCart = () => {
     //esconder modal
     hideModal()
     //esconder page main
-    containerSLider.classList = 'section-slider-hide'
+    sectionSlider.classList = 'section-slider-hide'
     sectionProducts.classList = 'section-products-hide'
     //esconder produtos da pesquisa
     sectionFound.classList = 'section-found-hide'

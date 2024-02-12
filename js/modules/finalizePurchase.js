@@ -2,7 +2,7 @@ import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
 
 
-import pageFinal from '../pages/pageFinal.js'
+import createPageFinal from '../pages/pageFinal.js'
 
 const finalizePurchase = () => {
   const buttonFinalize = document.querySelector(
@@ -50,8 +50,8 @@ const finalizePurchase = () => {
     //add conteudo no modal
     modal.appendChild(cardModal)
 
-    //função de finalização e abertura de pagina de agradecimento
-    pageFinal()
+    //função de criar e mostrar pagina de agradecimento
+    createPageFinal()
 
   }
 
