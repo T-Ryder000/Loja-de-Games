@@ -1,0 +1,88 @@
+.page-to-thank-hide{
+  display: none;
+}
+
+.page-to-thank{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  background-color: #121212;
+}
+.container-to-thank{
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text-thank{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.h1-thank{
+  font-size: 2em;
+}
+.h2-thank{
+  font-size: 1.3em;
+}
+
+.button-thank{
+  font-size: 0.8em;
+  padding: 1em;
+  border-radius: 0.2em;
+  border: none;
+  background-color: #a238ff;
+  color: white;
+  cursor: pointer;
+}
+.img-thank{
+  width: 30%;
+}
+
+@media screen and (max-width: 1024px) {
+  .container-to-thank{
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .text-thank{
+    gap: 1em;
+  }
+  .container-to-thank{
+    width: 55%;
+    gap: 2em;
+  }
+
+  .h2-thank{
+    font-size: 1em;
+  }
+  .p-thank{
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 650px) {
+  .page-to-thank{
+    flex-direction: column;
+    gap: 2em;
+  }
+  .container-to-thank{
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 85%;
+    height: 20%;
+  }
+  .text-thank{
+    width: 80%;
+  }
+  .button-thank-text{
+    display: none;
+  }
+
+  .img-thank{
+    width: 40%;
+  }
+
+}

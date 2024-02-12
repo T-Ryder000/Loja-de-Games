@@ -1,5 +1,7 @@
 import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
+
+
 import pageFinal from '../pages/pageFinal.js'
 
 const finalizePurchase = () => {
