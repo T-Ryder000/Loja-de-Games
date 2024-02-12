@@ -75,8 +75,8 @@ const createAndAddProductSection = games => {
     `
  
     //add produtos para section dos encontrados na pesquisa
-    const foundContaineritems = document.querySelector('[data-search="found"]')
-    foundContaineritems.appendChild(itemCopy)
+    const sectionFounditems = document.querySelector('[data-search="found"]')
+    sectionFounditems.appendChild(itemCopy)
 
 
 

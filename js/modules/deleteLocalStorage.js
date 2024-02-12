@@ -5,6 +5,7 @@ const deleteLocalStorage = index => {
   let cartItems = JSON.parse(objectProductsCart) || []
 
   if (cartItems.length > index) {
+    //modifica o conteudo da array, excluindo o item pelo index e guardando na variavel deletedItem
     const deletedItem = cartItems.splice(index, 1)[0]
     console.log(`Item excluído:`, deletedItem)
 

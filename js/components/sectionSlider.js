@@ -1,4 +1,7 @@
+import addSliderCart from '../modules/addSliderCart.js'
+
 const createAndAddSliderSection = games => {
+
   const { collections } = games
 
   const lastSixElements = collections.length - 7 // variavel que condiciona o slider a mostrar sempre os ultimos 6 elementos do banco json
@@ -39,8 +42,8 @@ const createAndAddSliderSection = games => {
       </div>
       <div class="poster-acquire">
         <p class="poster-acquire-text">A partir de R$ ${element.preco}</p>
-        <form class="poster-acquire-form" action="">
-          <button class="poster-acquire-buy">COMPRE AGORA</button>
+        <form class="poster-acquire-form" data-form="slider" action="">
+          <button class="poster-acquire-buy" data-button="button" >COMPRE AGORA</button>
           <button class="poster-acquire-save"><spam class="poster-acquire-save-text">PARA A LISTA DE DESEJOS  </spam><i class="fa-solid fa-bookmark"></i></button>
         </form>
       </div>
@@ -67,6 +70,8 @@ const createAndAddSliderSection = games => {
       containerSlideItem.appendChild(slideItem)
     }
   })
+
+  addSliderCart(games)
 }
 
 export default createAndAddSliderSection

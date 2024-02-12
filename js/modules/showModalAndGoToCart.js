@@ -2,6 +2,7 @@ const showModalAndGoToCart = () => {
   //buttons
 
   const logoPage = document.querySelectorAll('[data-img="logo"]') //logo da page para retornar ao main
+  const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
   const btnAddCart = document.querySelectorAll('[data-button="add-cart"]') //Produtos na main
   const btnAddCartCopy = document.querySelectorAll(
@@ -13,12 +14,13 @@ const showModalAndGoToCart = () => {
   const bodyContent = document.querySelector('[data-body="content"]') //Body
   const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
+  const sectionFound = document.querySelector('[data-container="found"]') //Sessao dos produtos da pesquisa
   const containerModal = document.querySelector('[data-container="modal"]') //Container do modal
-  const sectionCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
+  const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
 
   //Form
 
-  const formAddCart = document.querySelectorAll('[data-form="product"]') //form dos produtos na main
+  const formAddCartProducts = document.querySelectorAll('[data-form="product"]') //form dos produtos na main
 
   //Functions
 
@@ -35,18 +37,22 @@ const showModalAndGoToCart = () => {
     sectionProducts.classList = 'section-products'
 
     //esconder page carrinho de compras
-    sectionCart.classList = 'section-shopping-cart-hide'
+    pageCart.classList = 'section-shopping-cart-hide'
   }
 
   //Exibir page carrinho de compras
   const showShoppingCart = () => {
+    //mostrar button de retornar ao main
+    returnButton.style.visibility = 'visible'
     //esconder modal
     hideModal()
     //esconder page main
     containerSLider.classList = 'section-slider-hide'
     sectionProducts.classList = 'section-products-hide'
+    //esconder produtos da pesquisa
+    sectionFound.classList = 'section-found-hide'
     //mostrar page do carrinho de compras
-    sectionCart.classList = 'section-shopping-cart'
+    pageCart.classList = 'section-shopping-cart'
 
     scrollTop()
   }
@@ -103,15 +109,11 @@ const showModalAndGoToCart = () => {
   }
 
   //form da page main
-  formAddCart.forEach(form => {
+  formAddCartProducts.forEach(form => {
     form.addEventListener('submit', function (e) {
       preventDefault(e)
     })
   })
 }
 
-
-
 export default showModalAndGoToCart
-
-

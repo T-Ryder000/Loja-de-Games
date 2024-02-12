@@ -11,17 +11,16 @@ const pageProduct = games => {
 
   const containerSLider = document.querySelector('.section-slider') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('.section-products') //Sessao da coleção de jogos
-  const foundContainer = document.querySelector('[data-container="found"]') //Sessao da coleção de jogos do campo de busca
-  const showProduct = document.querySelector('[data-container="show-product"]') //page do product
-  const sectionCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
-
+  const sectionFound = document.querySelector('[data-container="found"]') //Sessao da coleção de jogos do campo de busca
+  const pageProduct = document.querySelector('[data-container="show-product"]') //page do product
+  const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
 
   //Div que será incrementada na page do produto.
   const gameContainer = document.createElement('div')
   gameContainer.classList.add('game-container')
-  showProduct.appendChild(gameContainer) //add essa div a page do produto ("ShowProduct")
+  pageProduct.appendChild(gameContainer) //add essa div a page do produto ("pageProduct")
 
-  let productId; //index do product clicado
+  let productId //index do product clicado
 
   //Processing
 
@@ -49,15 +48,15 @@ const pageProduct = games => {
       </form>
       `
 
-      //Para tornar os buttons da page main utilizaveis devido ao null q ocorre
-      commandsPageProducts()
+        //Para tornar os buttons da page main utilizaveis devido ao null q ocorre
+        commandsPageProducts()
       }
     }
 
     //Mostrar a page do produto e o botao return, e esconde a page main
     const showAndHide = () => {
       returnButton.style.visibility = 'visible'
-      showProduct.classList = 'show-product'
+      pageProduct.classList = 'show-product'
       containerSLider.classList = 'section-slider-hide'
       sectionProducts.classList = 'section-products-hide'
     }
@@ -67,14 +66,14 @@ const pageProduct = games => {
       const gameTrailer = document.querySelector('.game-trailer') // variavel do video para o trailer
       pauseVideo(gameTrailer)
       returnButton.style.visibility = 'hidden'
-      showProduct.classList = 'show-product-hide'
+      pageProduct.classList = 'show-product-hide'
       containerSLider.classList = 'section-slider'
       sectionProducts.classList = 'section-products'
       //para limpeza da barra de pesquisa
       const searchBar = document.querySelector('[data-bar="search"]')
       searchBar.value = ''
       //para esconder page do carrinho de compras
-      sectionCart.classList = 'section-shopping-cart-hide'
+      pageCart.classList = 'section-shopping-cart-hide'
     }
 
     //Função que pausa o video após retornar para a pagina home
@@ -83,7 +82,6 @@ const pageProduct = games => {
         gameTrailer.pause()
       }
     }
-
 
     //Cria objeto e envia dados para serem salvos no local storage
     const createProductToSave = index => {
@@ -96,38 +94,38 @@ const pageProduct = games => {
         }
         //função importada
         saveProduct(gameForCart)
-        }
       }
+    }
 
     //Exibir page carrinho de compras e button return, e esconde page main
-    const showShoppingCart = () => {  
+    const showShoppingCart = () => {
       //mostrar page do carrinho de compras
-      sectionCart.classList = 'section-shopping-cart'
-      console.log(sectionCart)
+      pageCart.classList = 'section-shopping-cart'
       returnButton.style.visibility = 'visible'
       containerSLider.classList = 'section-slider-hide'
       sectionProducts.classList = 'section-products-hide'
     }
 
+    //Commands buttons da page product
 
-//Commands buttons da page product
-
-    const commandsPageProducts=()=>{
+    const commandsPageProducts = () => {
       //Button para ocultar page do product e ir ao Carrinho de Compras
-      const btnAddCartPageProduct = document.querySelector('[data-button="page-product-add"]') //Add product ao carrinho
-      btnAddCartPageProduct.addEventListener('click',function(){
-         hidePageProduct()
-         createProductToSave(productId)
-         showShoppingCart()
-        })
+      const btnAddCartPageProduct = document.querySelector(
+        '[data-button="page-product-add"]'
+      ) //Add product ao carrinho
+      btnAddCartPageProduct.addEventListener('click', function () {
+        hidePageProduct()
+        createProductToSave(productId)
+        showShoppingCart()
+      })
       //form da page product
-      const formAddCartPageProduct = document.querySelector('[data-form="pageProduct"]') //form da page dos produtos
-      formAddCartPageProduct.addEventListener('submit', function(e){
-          e.preventDefault()
+      const formAddCartPageProduct = document.querySelector(
+        '[data-form="pageProduct"]'
+      ) //form da page dos produtos
+      formAddCartPageProduct.addEventListener('submit', function (e) {
+        e.preventDefault()
       })
     }
-
-
 
     //buttons
 
@@ -136,7 +134,7 @@ const pageProduct = games => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
-        foundContainer.classList = 'section-found-hide'
+        sectionFound.classList = 'section-found-hide'
 
         productId = index
       })
@@ -146,7 +144,7 @@ const pageProduct = games => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
-        foundContainer.classList = 'section-found-hide'
+        sectionFound.classList = 'section-found-hide'
 
         productId = index
       })
@@ -154,8 +152,6 @@ const pageProduct = games => {
 
     //Button de retornar que esconde a pagina do produto
     returnButton.addEventListener('click', hidePageProduct)
-
-
   })
 }
 
