@@ -27,6 +27,8 @@
   align-items: center;
 }
 
+/*modal de add ao carrinho*/
+
 .text-modal{
   font-size: 1.2em;
   padding:1em;
@@ -110,5 +112,55 @@
   }
   .product-modal-description{
     display: none;
+  }
+}
+
+
+/*modal de finalização de compras*/
+
+.form-finish{
+  border: 1px solid #a238ff;;
+ padding: 2em;
+ font-size: 1.2em;
+}
+
+.label-finish{
+  padding: 1em;
+}
+
+.select-finish{
+  padding: 1em;
+  outline: none;
+  font-weight: bold;
+}
+
+.card-text{
+  padding: 1em;
+}
+.card-text-number{
+  padding: 1em;
+  color: #a238ff;
+}
+
+.finalize-payment{
+  width: 100%;
+  padding: 1em;
+  color: white;
+  background-color: #a238ff;
+  border: none;
+  border-radius: 0.1em;
+}
+
+@media screen and (max-width: 650px){
+  .form-finish{
+    display:flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .form-finish{
+    padding: 0.5em;
+    width:90vw;
   }
 }

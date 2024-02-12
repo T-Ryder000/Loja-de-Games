@@ -90,7 +90,8 @@ const pageProduct = games => {
           nome: `${element.nome}`,
           preco: `${element.preco}`,
           capa: `${element.capa}`,
-          id: index
+          id: index,
+          numeroDoSelect: 1 
         }
         //função importada
         saveProduct(gameForCart)

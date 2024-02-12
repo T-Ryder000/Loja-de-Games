@@ -1,6 +1,8 @@
 import deleteLocalStorage from '../modules/deleteLocalStorage.js'
+import changeCartValue from '../modules/changeCartValue.js'
+import finalizePurchase from '../modules/finalizePurchase.js'
 
-const createPageCart = games => {
+const createPageCart = () => {
   // Seleciona o elemento no DOM onde o carrinho será adicionado
   const pageCart = document.querySelector('[data-section="cart"]')
 
@@ -29,6 +31,7 @@ const createPageCart = games => {
         <form class="form-product-quantity">
           <!-- Opções de quantidade do produto -->
           <select class="product-quantity" data-select="cart-amount" name="number-products" id="number-products">
+            <option data-select="option" value="0">${gameForCart.numeroDoSelect}</option>
             <option data-select="option" value="1">1</option>
             <option data-select="option" value="2">2</option>
             <option data-select="option" value="3">3</option>
@@ -37,7 +40,9 @@ const createPageCart = games => {
           </select>
         </form>
         <!-- Valor do produto -->
-        <h3 class="cart-value-product" data-value="cart-product">R$ ${gameForCart.preco}</h3>
+        <h3 class="cart-value-product" data-value="cart-product">R$ ${(
+          gameForCart.preco * gameForCart.numeroDoSelect
+        ).toFixed(2)}</h3>
         <!-- Ícone de lixeira para excluir o produto do carrinho -->
         <i class="fa-solid fa-trash-can cart-delete-product" data-button="cart-delete"></i>
       </div>
@@ -69,13 +74,14 @@ const createPageCart = games => {
     </div>
   `
 
-  // Adiciona o contêiner do carrinho à seção no DOM
+  // Adiciona o container do carrinho a seção no DOM
   pageCart.appendChild(containerCart)
 
-  //Botao para finalizar compra
-  const buttonForCart = document.querySelector(
-    '[data-button="cart-completion"]'
-  )
+  //chama função de finalizar compra
+  finalizePurchase()
+  //chama função de alterar quantidades do produto
+  changeCartValue()
+
   //Botao para apagar produto do carrinho
   const buttonDeleteProductCard = document.querySelectorAll(
     '[data-button="cart-delete"]'
@@ -90,7 +96,9 @@ const createPageCart = games => {
 // Função auxiliar para calcular o valor total do carrinho
 const calculateTotal = cartItems => {
   // Usa o método reduce para somar os valores dos produtos no carrinho
-  const total = cartItems.reduce((sum, item) => sum + parseFloat(item.preco), 0)
+  const total = cartItems.reduce((sum, item) => sum + parseFloat((
+    item.preco * item.numeroDoSelect
+  ).toFixed(2)), 0)
   // Converte o total para uma string formatada com duas casas decimais
   return total.toFixed(2)
 }
