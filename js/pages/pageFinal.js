@@ -1,5 +1,5 @@
 const createPageFinal = () => {
-  const modal = document.querySelector('[data-container="modal"]') //modal da pagina
+  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
   const pageCart = document.querySelector('[data-section="cart"]') //page do carrinho de compras
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
@@ -15,7 +15,7 @@ const createPageFinal = () => {
   const resetContent = () => {
     const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
     if (paymentCard.value !== 'Nenhum') {
-      modal.classList = 'hide-modal'
+      containerModal.classList = 'hide-modal'
       pageCart.classList = 'section-shopping-cart-hide'
       returnButton.style.visibility = 'hidden'
       localStorage.clear()

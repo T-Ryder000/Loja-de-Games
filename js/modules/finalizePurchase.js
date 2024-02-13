@@ -14,13 +14,13 @@ const finalizePurchase = () => {
     '[data-value="cart-product-total"]'
   ) //valor total da compra
 
-  const modal = document.querySelector('[data-container="modal"]') //modal da pagina
+  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
 
   let paymentCard //Numeros do cartão selecionado
 
   //cria modal de finalização de compra
   const createModalFinish = () => {
-    modal.classList = 'show-modal' //tornando o modal visivel
+    containerModal.classList = 'show-modal' //tornando o modal visivel
     const cardModal = document.querySelector('.card-modal') //container do conteudo no modal
 
     cardModal.innerHTML = `
@@ -48,7 +48,7 @@ const finalizePurchase = () => {
     })
 
     //add conteudo no modal
-    modal.appendChild(cardModal)
+    containerModal.appendChild(cardModal)
 
     //função de criar e mostrar pagina de agradecimento
     createPageFinal()

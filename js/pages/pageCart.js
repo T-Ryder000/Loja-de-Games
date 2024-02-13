@@ -1,10 +1,12 @@
-import deleteLocalStorage from '../modules/deleteLocalStorage.js'
 import changeCartValue from '../modules/changeCartValue.js'
 import finalizePurchase from '../modules/finalizePurchase.js'
+import deleteProductCart from '../modules/deleteProductCart.js'
 
 const createPageCart = () => {
   // Seleciona o elemento no DOM onde o carrinho será adicionado
   const pageCart = document.querySelector('[data-section="cart"]')
+
+  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
 
   // Cria um contêiner para o carrinho
   const containerCart = document.createElement('div')
@@ -31,7 +33,9 @@ const createPageCart = () => {
         <form class="form-product-quantity">
           <!-- Opções de quantidade do produto -->
           <select class="product-quantity" data-select="cart-amount" name="number-products" id="number-products">
-            <option data-select="option" value="0">${gameForCart.numeroDoSelect}</option>
+            <option data-select="option" value="0">${
+              gameForCart.numeroDoSelect
+            }</option>
             <option data-select="option" value="1">1</option>
             <option data-select="option" value="2">2</option>
             <option data-select="option" value="3">3</option>
@@ -74,6 +78,21 @@ const createPageCart = () => {
     </div>
   `
 
+  //cria modal de deletar produto do carrinho
+  const createModalDelete = index => {
+    containerModal.classList = 'show-modal' //tornando o modal visivel
+    const cardModal = document.querySelector('.card-modal') //container do conteudo no modal
+
+    cardModal.innerHTML = `
+      <h2 class="text-delete">Tem certeza que deseja retirar esse produto do carrinho?</h2>
+      <form class="form-delete-product" data-form="delete">
+        <button class="button-delete-yes" data-button="delete-yes">Sim</button>
+        <button class="button-delete-not" data-button="delete-not">Não</button>
+      </form>
+    `
+    deleteProductCart(index)
+  }
+
   // Adiciona o container do carrinho a seção no DOM
   pageCart.appendChild(containerCart)
 
@@ -88,7 +107,7 @@ const createPageCart = () => {
   )
   buttonDeleteProductCard.forEach((del, index) => {
     del.addEventListener('click', function () {
-      deleteLocalStorage(index)
+      createModalDelete(index)
     })
   })
 }
@@ -96,9 +115,11 @@ const createPageCart = () => {
 // Função auxiliar para calcular o valor total do carrinho
 const calculateTotal = cartItems => {
   // Usa o método reduce para somar os valores dos produtos no carrinho
-  const total = cartItems.reduce((sum, item) => sum + parseFloat((
-    item.preco * item.numeroDoSelect
-  ).toFixed(2)), 0)
+  const total = cartItems.reduce(
+    (sum, item) =>
+      sum + parseFloat((item.preco * item.numeroDoSelect).toFixed(2)),
+    0
+  )
   // Converte o total para uma string formatada com duas casas decimais
   return total.toFixed(2)
 }

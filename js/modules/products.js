@@ -23,12 +23,6 @@ const addsCarouselInteractions=()=>{
   const productItem = document.querySelectorAll('[data-item="carousel"]')
 
 
-
-  
-
-
-
-
   const preventDefault = (event) => {
     event.preventDefault()
   } 

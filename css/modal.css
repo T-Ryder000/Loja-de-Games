@@ -165,3 +165,79 @@
     width:90vw;
   }
 }
+
+
+/*modal de deletar produto do carrinho*/
+
+.text-delete{
+ padding: 1em;
+}
+.form-delete-product{
+ width: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ padding: 2em;
+}
+.button-delete-yes, .button-delete-not{
+  font-size: 1em;
+   padding: 1em;
+   width: 20%;
+   border: none;
+   border-radius: 0.2em;
+   font-weight: bold;
+   cursor:pointer;
+}
+.button-delete-yes{
+  background-color: #a238ff;
+  color:white;
+}
+.button-delete-not{
+  background-color:rgb(255, 66, 66);
+  color:white;
+}
+
+/*Modal de produto existente no carrinho*/
+
+.modal-existing-product{
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  padding: 2em;
+  gap: 1em;
+  border: 2px solid black;
+}
+
+.container-text-existing-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  color: white;
+}
+
+
+.form-existing-product{
+  padding: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-see-product, .button-see-product-not{
+  font-size: 1em;
+  padding: 1em;
+  width: 20%;
+  border: none;
+  border-radius: 0.2em;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.button-see-product{
+  background-color: #a238ff;
+  color:white;
+}
+.button-see-product-not{
+  background-color:rgb(255, 66, 66);
+  color:white;
+}
