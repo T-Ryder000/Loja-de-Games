@@ -166,29 +166,18 @@
 @media screen and (max-width:480px){
   .cart-product{
     flex-direction: column;
-    align-items: end;
   }
   .cart-details{
     width: 100%;
-    justify-content: space-around;
   }
   .cart-name-product{
     font-size: 1.1em;
   }
   .cart-manager{
-    width: 70%;
+    width: 100%;
+    justify-content: space-between;
   }
   .container-cart-completion{
     height: 30vw;
   }
 }
-
-
-/* data-product="cart" */
-/* data-value="cart-product" */
-/* data-value="cart-product-total" */
-
-/* data-form="cart-completion" */
-/* data-button="cart-completion" */
-/* data-button="cart-delete" */
-/* data-select="cart-amount" */

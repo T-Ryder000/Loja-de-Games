@@ -26,6 +26,7 @@ const finalizePurchase = () => {
 
     cardModal.innerHTML = `
       <form class="form-finish" data-form="finish">
+        <i class="fa-solid fa-x button-close-finish" data-close="finish"></i>
         <label class="label-finish" data-label="cardOptions">Escolha um cartão de crédito:</label>
         <select class="select-finish" data-select="card-options" name="cardOptions" required>
           <option value="Nenhum" selected>Nenhum</option>
@@ -54,11 +55,20 @@ const finalizePurchase = () => {
     //add conteudo no modal
     containerModal.appendChild(cardModal)
 
+
+    //Fecha modal de finalização de compra
+    const closeModalFinish = document.querySelector('[data-close="finish"]')
+    closeModalFinish.addEventListener('click', function(){
+      containerModal.classList = 'hide-modal' 
+      containerModal.innerHTML = ''
+    })
+
     //função de criar e mostrar pagina de agradecimento
     createPageFinal()
   }
 
   buttonFinalize.addEventListener('click', createModalFinish)
+
 
   formFinalize.addEventListener('submit', function (e) {
     e.preventDefault()

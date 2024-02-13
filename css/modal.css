@@ -9,6 +9,19 @@
  height: 100%;
  z-index: 3;
  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+ -webkit-animation: scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	        animation: scale-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+@keyframes scale-in{
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
 }
 
 .hide-modal{
@@ -19,12 +32,13 @@
   border: 2px solid black;
   max-height: 100%;
   max-width: 700px;
-  padding: 1em 2em;
+  padding: 1em 1em;
   border-radius: 0.2em;
   background-color: #121212;
   color:white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -95,15 +109,15 @@
     overflow: hidden;
   }
   .card-modal{
-    height: 100%;
-    padding:3em;
+    /* height: 100%; */
+    padding:1em;
   }
   .product-modal{
     flex-direction: column;
     align-items: center;
   }
   .product-modal-image{
-    width:80%;
+    width:50%;
   }
   .product-modal-details{
     align-items: center;
@@ -120,9 +134,18 @@
 /*modal de finalização de compras*/
 
 .form-finish{
-  border: 1px solid #a238ff;;
+border: 1px solid #a238ff;;
  padding: 2em;
  font-size: 1.2em;
+}
+
+.button-close-finish{
+  width: 100%;
+  font-size: 1em;
+  padding: 0.5em 1em 2em;
+  cursor: pointer;
+  color:rgb(255, 66, 66);
+  text-align: end;
 }
 
 .label-finish{
@@ -196,6 +219,23 @@
   color:white;
 }
 
+@media screen and (max-width:600px) {
+
+  .form-delete-product{
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+  }
+  
+  .button-delete-yes, .button-delete-not{
+    width: 100%;
+  }
+}
+
+
+
+
+
 /*Modal de produto existente no carrinho*/
 
 .modal-existing-product{
@@ -240,4 +280,25 @@
 .button-see-product-not{
   background-color:rgb(255, 66, 66);
   color:white;
+}
+
+@media screen and (max-width:600px) {
+  .modal-existing-product{
+    padding: 1em;
+  }
+  .form-existing-product{
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+  }
+  
+  .button-see-product, .button-see-product-not{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .text-existing-product{
+    font-size: 1em;
+  }
 }
