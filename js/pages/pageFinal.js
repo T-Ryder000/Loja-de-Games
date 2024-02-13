@@ -25,9 +25,11 @@ const createPageFinal = () => {
   }
 
   const createThankYouPage = () => {
-    pageFinal.classList = 'page-to-thank'
+    const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
+    if (paymentCard.value !== 'Nenhum') {
+      pageFinal.classList = 'page-to-thank'
 
-    pageFinal.innerHTML = `
+      pageFinal.innerHTML = `
     <div class="container-to-thank">
     <div class="text-thank">
       <h1 class="h1-thank">PARABÉNS!</h1>
@@ -46,13 +48,17 @@ const createPageFinal = () => {
       <img class="img-thank" src="./images/Icon-de-finalização.png"/>
     `
 
-    commands()
+      commands()
+    }
   }
 
   const returnHome = () => {
     pageFinal.classList = 'page-to-thank-hide'
-    sectionSlider.classList = "section-slider"
-    sectionProducts.classList = "section-products"
+    sectionSlider.classList = 'section-slider'
+    sectionProducts.classList = 'section-products'
+
+    const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
+    containerModal.innerHTML = ''///////////////
   }
 
   const commands = () => {

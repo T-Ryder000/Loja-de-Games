@@ -1,7 +1,5 @@
 import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
-
-
 import createPageFinal from '../pages/pageFinal.js'
 
 const finalizePurchase = () => {
@@ -21,7 +19,10 @@ const finalizePurchase = () => {
   //cria modal de finalização de compra
   const createModalFinish = () => {
     containerModal.classList = 'show-modal' //tornando o modal visivel
-    const cardModal = document.querySelector('.card-modal') //container do conteudo no modal
+
+    const cardModal = document.createElement('div')
+    cardModal.classList = 'card-modal'
+    containerModal.innerHTML = ''
 
     cardModal.innerHTML = `
       <form class="form-finish" data-form="finish">
@@ -39,6 +40,9 @@ const finalizePurchase = () => {
         <button class="finalize-payment" data-button="finalize-payment">Finalizar Pagamento</button>
       </form>
     `
+
+    containerModal.appendChild(cardModal)
+
     //Exibir numero do conteudo mediante mudança no input select
     paymentCard = document.querySelector('[data-select="card-options"]')
 
@@ -52,7 +56,6 @@ const finalizePurchase = () => {
 
     //função de criar e mostrar pagina de agradecimento
     createPageFinal()
-
   }
 
   buttonFinalize.addEventListener('click', createModalFinish)
