@@ -1,4 +1,7 @@
-const showModalAndGoToCart = () => {
+import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
+import createModalToAddCart from '../components/modals/modalToAddCart.js'
+import createModalProdcutExisting from '../components/modals/modalProductExisting.js'
+const showCreatedModal = games => {
   //buttons
 
   const logoPage = document.querySelectorAll('[data-img="logo"]') //logo da page para retornar ao main
@@ -54,6 +57,7 @@ const showModalAndGoToCart = () => {
     //mostrar page do carrinho de compras
     pageCart.classList = 'section-shopping-cart'
 
+    resetAndDisplayPageCart()
     scrollTop()
   }
 
@@ -67,6 +71,30 @@ const showModalAndGoToCart = () => {
   const showModal = () => {
     bodyContent.classList = 'body-modal-pause' //muda classe para corrigir o rolamento do modal no mobile
     containerModal.classList = 'show-modal'
+  }
+
+  let cartItems = [] //Para pegar itens do local storage
+
+  //Exibe diferentes modais mediante o produto já existir no carrinho ou não
+  const showClickedProduct = index => {
+    // Verifica se há itens no localStorage
+    if (localStorage.hasOwnProperty('cartItems')) {
+      const objectProductsCart = localStorage.getItem('cartItems')
+      cartItems = JSON.parse(objectProductsCart)
+      // Verifica se o jogo já está no carrinho
+      const isGameInCart = cartItems.some(item => item.id === index)
+      console.log(isGameInCart)
+      //Se o jogo estiver no carrinho, irá avisar
+      if (isGameInCart === true) {
+        createModalProdcutExisting(index)
+      } else if (isGameInCart === false) {
+        createModalToAddCart(games, index)
+        console.log('falaaa')
+      } 
+    } else{
+      createModalToAddCart(games, index)
+      console.log('falaaa')
+    }
     modalCommands()
   }
 
@@ -74,24 +102,33 @@ const showModalAndGoToCart = () => {
 
   //buttons do modal (chamei ele dentro da função para que o resultado não seja null)
   const modalCommands = () => {
-    const continueShoppingButton = document.querySelector(
+    const formModal = document.querySelector('[data-form="modal"]') //form do modal
+    const buttonForCart = document.querySelector('[data-button="finish"]') //botao para a page do carrinho de compras
+    const ButtonContinueShopping = document.querySelector(
       '[data-button="continue"]'
     ) //botao de ocultar o modal
-    const buttonForCart = document.querySelector('[data-button="finish"]') //botao para a page do carrinho de compras
-    const formModal = document.querySelector('[data-form="modal"]') //form do modal
-    continueShoppingButton.addEventListener('click', hideModal)
-    formModal.addEventListener('submit', preventDefault)
-    buttonForCart.addEventListener('click', showShoppingCart)
+
+      formModal.addEventListener('submit', preventDefault)
+      buttonForCart.addEventListener('click', showShoppingCart)
+      ButtonContinueShopping.addEventListener('click', hideModal)
   }
 
   //Commands buttons modal
 
   //buttons da page main (para chamar o modal ou ir direto ao carrinho de compras)
-  btnAddCart.forEach(button => {
-    button.addEventListener('click', showModal)
+
+  btnAddCart.forEach((button, index) => {
+    button.addEventListener('click', function () {
+      showClickedProduct(index)
+      showModal()
+    })
   })
-  btnAddCartCopy.forEach(button => {
-    button.addEventListener('click', showModal)
+
+  btnAddCartCopy.forEach((button, index) => {
+    button.addEventListener('click', function () {
+      showClickedProduct(index)
+      showModal()
+    })
   })
 
   //Commands logo
@@ -116,4 +153,4 @@ const showModalAndGoToCart = () => {
   })
 }
 
-export default showModalAndGoToCart
+export default showCreatedModal

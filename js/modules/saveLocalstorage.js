@@ -3,7 +3,7 @@ import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
 const saveProduct = gameForCart => {
 
-  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
+  console.log(gameForCart)
 
   let cartItems = []
 
@@ -17,18 +17,6 @@ const saveProduct = gameForCart => {
 
     //Se o jogo estiver no carrinho, irá avisar
     if (isGameInCart) {
-      containerModal.innerHTML = `
-      <div class="modal-existing-product">
-        <div class="container-text-existing-product">
-          <h1 class="text-existing-product">Esse produto já encontra-se no carrinho!<h1>
-          <h2 class="text-existing-product">Deseja ir até o carrinho compras?</h2>
-        </div>
-        <form class="form-existing-product">
-          <button class="button-see-product">Sim</button>
-          <button class="button-see-product-not">Não</button>
-        </form>  
-      </div>
-      `
       console.log('Este jogo já está no carrinho.');
     } else {
       // Adiciona o jogo ao carrinho
@@ -45,9 +33,3 @@ const saveProduct = gameForCart => {
 }
 
 export default saveProduct
-
-
-// if (!Array.isArray(cartItems)) {
-//   // Se cartItems não for uma array (pode ser nulo ou undefined), inicializamos como uma array vazia
-//   cartItems = []
-// }
