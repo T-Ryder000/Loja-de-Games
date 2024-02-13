@@ -156,6 +156,7 @@ border: 1px solid #a238ff;;
   padding: 1em;
   outline: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .card-text{
@@ -173,6 +174,7 @@ border: 1px solid #a238ff;;
   background-color: #a238ff;
   border: none;
   border-radius: 0.1em;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 650px){

@@ -75,6 +75,7 @@
 .product-quantity{
   padding: 0.5em;
   outline: none;
+  cursor: pointer;
 }
 
 .cart-value-product{

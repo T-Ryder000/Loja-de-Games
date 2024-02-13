@@ -52,9 +52,12 @@ const addSliderCart = games => {
     }
 
     //Commands buttons add ao carrinho de compras
-
     btnAddCartSlider.forEach((button, index) => {
       button.addEventListener('click', function () {
+        createProductToSave(index)
+        showShoppingCart()
+      })
+      button.addEventListener('touchstart', function () {
         createProductToSave(index)
         showShoppingCart()
       })
