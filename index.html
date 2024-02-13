@@ -16,7 +16,11 @@
       <nav class="nav-container-header">
         <ul class="list-container-header">
           <li class="logo-container-header">
-            <img class="logo-image-header" data-img='logo' src="./images/Game-Logo.png" />
+            <img
+              class="logo-image-header"
+              data-img="logo"
+              src="./images/Game-Logo.png"
+            />
           </li>
           <li class="return-home-header" data-return="return-home">
             <a class="return-text-header" href="#/">
@@ -65,8 +69,7 @@
 
     <!-- page final de agradecimento -->
 
-    <section class="page-to-thank-hide" data-container="page-final">
-    </section>
+    <section class="page-to-thank-hide" data-container="page-final"></section>
 
     <!-- Footer -->
 
@@ -74,7 +77,10 @@
       <!-- Logo do rodapé -->
       <div class="containers-footer">
         <a href="#page-top" class="link-footer"
-          ><img class="logo-footer" data-img='logo' src="./images/Game-Logo.png"
+          ><img
+            class="logo-footer"
+            data-img="logo"
+            src="./images/Game-Logo.png"
         /></a>
       </div>
       <!-- Creditos ao desenvolvedor e suas redes sociais -->
@@ -102,8 +108,6 @@
       </div>
     </footer>
 
-    
-
     <!-- Scripts -->
 
     <script
@@ -124,25 +128,23 @@
       import { request } from './js/service/request.js'
       import createAndAddSliderSection from './js/components/sectionSlider.js'
       import createAndAddProductSection from './js/components/sectionProduct.js'
-      import createModal from './js/components/modal.js'
       import addsSliderInteractions from './js/modules/Slider.js'
       import addsCarouselInteractions from './js/modules/products.js'
       import ScrollEventOnClick from './js/modules/scrollar.js'
       import searchProducts from './js/modules/search.js'
-      import showModalAndGoToCart from './js/modules/showModalAndGoToCart.js'
+      import showCreatedModal from './js/modules/showModal.js'
       import pageProduct from './js/pages/pageProduct.js'
       //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
       request()
         .then(games => {
           createAndAddSliderSection(games)
           createAndAddProductSection(games)
-          createModal(games)
           addsSliderInteractions()
           addsCarouselInteractions()
           ScrollEventOnClick()
-          showModalAndGoToCart()
           searchProducts(games) //Precisará dos dados json para realizar a tarefa
           pageProduct(games)
+          showCreatedModal(games)
         })
         .catch(error => {
           console.log(`Houve um erro na chamada de dados: ${error}`)
