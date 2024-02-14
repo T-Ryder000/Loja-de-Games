@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body id="page-top" data-body="content">
-    <!-- Sessao de modal escondida -->
+
+    <!-- Modal da pagina (Escondido) -->
     <section class="hide-modal" data-container="modal"></section>
 
     <!-- Header -->
@@ -54,7 +55,6 @@
     </header>
 
     <!-- Main -->
-
     <main class="page-main" data-main="root">
       <!-- Botão para scrollar -->
       <a href="#page-top" class="scrollar" data-button="scrollar"
@@ -62,17 +62,15 @@
       ></a>
     </main>
 
-    <!-- sessao do carrinho de compras escondida  -->
+    <!-- Page do carrinho de compras (Escondido) -->
     <section class="section-shopping-cart-hide" data-section="cart">
       <h2 class="text-checkout-cart">CONFIRA</h2>
     </section>
 
-    <!-- page final de agradecimento -->
-
+    <!-- Page agradecimento pela compra (Escondido)-->
     <section class="page-to-thank-hide" data-container="page-final"></section>
 
     <!-- Footer -->
-
     <footer class="page-footer">
       <!-- Logo do rodapé -->
       <div class="containers-footer">
@@ -110,31 +108,36 @@
 
     <!-- Scripts -->
 
-    <script
-      src="https://kit.fontawesome.com/730f4803c3.js"
-      crossorigin="anonymous"
-    ></script>
-
+    <script src="https://kit.fontawesome.com/730f4803c3.js" crossorigin="anonymous" ></script>
     <script type="module">
-      //importando pagina que irá conter o slider e os produtos
+
+     //importando page que irá conter o slider e os produtos
       import createMainPageTemplate from './js/pages/pageMain.js'
-      const main = document.querySelector('[data-main="root"]') // variavél da main
-      //Chama a pagina principal( o home ) ao carregar a pagina
+
+      const main = document.querySelector('[data-main="root"]') //Variavél da main
+
+      //Chama page principal( o home ) ao carregar a pagina
       window.addEventListener('DOMContentLoaded', () => {
         main.appendChild(createMainPageTemplate())
       })
 
-      //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar a parte do html mediante o necessario.
+      //importação dos arquivos javascripts, responsaveis por deixar a pagina dinamica e inclementar as partes necessarias do html.
+
+      //requisição
       import { request } from './js/service/request.js'
+      //componentes
       import createAndAddSliderSection from './js/components/sectionSlider.js'
       import createAndAddProductSection from './js/components/sectionProduct.js'
-      import addsSliderInteractions from './js/modules/Slider.js'
-      import addsCarouselInteractions from './js/modules/products.js'
-      import ScrollEventOnClick from './js/modules/scrollar.js'
-      import searchProducts from './js/modules/search.js'
+      //modulos
+      import addsSliderInteractions from './js/modules/eventSlider.js'
+      import addsCarouselInteractions from './js/modules/eventProducts.js'
+      import ScrollEventOnClick from './js/modules/eventScrollar.js'
+      import searchProducts from './js/modules/eventSearch.js'
       import showCreatedModal from './js/modules/showModal.js'
+      //paginas
       import pageProduct from './js/pages/pageProduct.js'
-      //Responsavél pela requisiçao dos dados Json, e circulação desses dados para as funções que precisam.
+
+      //Responsavél pela requisiçao dos dados Json, e circulação desses dados.
       request()
         .then(games => {
           createAndAddSliderSection(games)
@@ -142,7 +145,7 @@
           addsSliderInteractions()
           addsCarouselInteractions()
           ScrollEventOnClick()
-          searchProducts(games) //Precisará dos dados json para realizar a tarefa
+          searchProducts(games)
           pageProduct(games)
           showCreatedModal(games)
         })
@@ -150,5 +153,6 @@
           console.log(`Houve um erro na chamada de dados: ${error}`)
         })
     </script>
+
   </body>
 </html>

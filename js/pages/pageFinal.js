@@ -6,7 +6,6 @@ const createPageFinal = () => {
   const buttonFinalizePayment = document.querySelector('[data-button="finalize-payment"]')//button para finalizar pagamento
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
-
 //Pages, Sections e modal
 
   const pageCart = document.querySelector('[data-section="cart"]') //page do carrinho de compras
@@ -15,6 +14,8 @@ const createPageFinal = () => {
   const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
 
+
+//Oculta e apaga o conteudo do carrinho de compras após o pagamento
   const resetContent = () => {
     const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
     if (paymentCard.value !== 'Nenhum') {
@@ -27,6 +28,8 @@ const createPageFinal = () => {
     }
   }
 
+  
+//Cria page de agradecimento após o pagamento
   const createThankYouPage = () => {
     const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
     if (paymentCard.value !== 'Nenhum') {
@@ -51,20 +54,20 @@ const createPageFinal = () => {
       <img class="img-thank" src="./images/Icon-de-finalização.png"/>
     `
 
-      commands()
+      pageCommands()
     }
   }
 
+  //Função para retornar a pagina inicial
   const returnHome = () => {
     pageFinal.classList = 'page-to-thank-hide'
     sectionSlider.classList = 'section-slider'
     sectionProducts.classList = 'section-products'
-
-    const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
-    containerModal.innerHTML = ''///////////////
+    containerModal.innerHTML = ''///////////////Limpando conteudo do modal
   }
 
-  const commands = () => {
+  //Evento dos buttons da page de agradecimento
+  const pageCommands = () => {
     const formThanks = document.querySelector('[data-form="thank"]')
     const buttonThank = document.querySelector('[data-button="thank"]')
     formThanks.addEventListener('submit', function (e) {
@@ -73,13 +76,12 @@ const createPageFinal = () => {
     buttonThank.addEventListener('click', returnHome)
   }
 
-  const finish = () => {
+
+  //Evento do button de pagamento, ele chama a função de resetar e a pagina de agradecimento
+  buttonFinalizePayment.addEventListener('click', function(){
     resetContent()
     createThankYouPage()
-  }
-
-  buttonFinalizePayment.addEventListener('click', finish)
-
+  })
   formFinalizePayment.addEventListener('submit', function (e) {
     e.preventDefault()
   })

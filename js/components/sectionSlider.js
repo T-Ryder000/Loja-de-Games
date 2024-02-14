@@ -1,11 +1,10 @@
-import addSliderCart from '../modules/addSliderCart.js'
+import addProductFromSliderToCart from '../modules/addProductSliderCart.js'
 
 const createAndAddSliderSection = games => {
-
   const { collections } = games
 
   const lastSixElements = collections.length - 7 // variavel que condiciona o slider a mostrar sempre os ultimos 6 elementos do banco json
- 
+
   //Container dos posters
   const posterContainer = document.querySelector('[data-container="poster"]')
 
@@ -50,7 +49,6 @@ const createAndAddSliderSection = games => {
     </div>
     `
 
-
     if (element.id > lastSixElements) {
       posterContainer.appendChild(posterItem)
     }
@@ -71,7 +69,7 @@ const createAndAddSliderSection = games => {
     }
   })
 
-  addSliderCart(games)
+  addProductFromSliderToCart(games)
 }
 
 export default createAndAddSliderSection

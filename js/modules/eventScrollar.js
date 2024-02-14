@@ -1,6 +1,5 @@
 const ScrollEventOnClick=()=>{
 
-
 const buttonScrollar = document.querySelector('[data-button="scrollar"]');//Botão que scrolla a pagina
 
 window.addEventListener('scroll', function() {

@@ -2,7 +2,6 @@ const addsCarouselInteractions=()=>{
 
   const containerGeneral = document.querySelectorAll('.products-container') 
   
-
   let startX = 0
 
    containerGeneral.forEach((element)=>{
@@ -17,16 +16,13 @@ const addsCarouselInteractions=()=>{
     btnPrevious.addEventListener('click', function(e){
       productContainerItem.scrollLeft = startX - e.clientX
     })
-
   })
   
   const productItem = document.querySelectorAll('[data-item="carousel"]')
 
-
   const preventDefault = (event) => {
     event.preventDefault()
   } 
-
 
   productItem.forEach((item)=>{
     // const link = item.querySelector('[data-link="item"]')

@@ -1,16 +1,15 @@
-import saveProduct from '../modules/saveLocalStorage.js'
+import saveProduct from './saveLocalStorage.js'
 import createPageCart from '../pages/pageCart.js'
-import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
+import resetAndDisplayPageCart from './resetAndDisplayPageCart.js'
 
-const addSliderCart = games => {
+const addProductFromSliderToCart = games => {
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
   const btnAddCartSlider = document.querySelectorAll('[data-button="button"]') //Produtos do slider
   const formAddCartSlider = document.querySelectorAll('[data-form="slider"]') //form dos sliders na main
 
   const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
-  const sectionProducts = document.querySelector('[data-container="products"]')//Sessao da coleção de jogos
+  const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
-
 
   //Functions
 
@@ -23,7 +22,6 @@ const addSliderCart = games => {
     sectionProducts.classList = 'section-products-hide'
     //mostrar page do carrinho de compras
     pageCart.classList = 'section-shopping-cart'
-
 
     createPageCart()
     resetAndDisplayPageCart()
@@ -79,4 +77,4 @@ const addSliderCart = games => {
   })
 }
 
-export default addSliderCart
+export default addProductFromSliderToCart

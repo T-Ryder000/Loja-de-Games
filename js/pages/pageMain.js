@@ -1,5 +1,5 @@
 const createMainPageTemplate = () => {
-  //Aqui é a sessao principal da pagina, o home. Ela é criada e retornada para ser add por um appenchild no script principal( script.js).
+  //Sessao principal da pagina, que contém o Slider, coleção de Jogos e a pagina do produto.
 
   const sectionGeneral = document.createElement('section')
   sectionGeneral.classList.add('section-general')

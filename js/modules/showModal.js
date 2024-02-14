@@ -73,7 +73,7 @@ const showCreatedModal = games => {
     containerModal.classList = 'show-modal'
   }
 
-  let cartItems = [] //Para pegar itens do local storage
+  let cartItems = [] //Para guardar itens do local storage
 
   //Exibe diferentes modais mediante o produto já existir no carrinho ou não
   const showClickedProduct = index => {
@@ -89,11 +89,9 @@ const showCreatedModal = games => {
         createModalProdcutExisting(index)
       } else if (isGameInCart === false) {
         createModalToAddCart(games, index)
-        console.log('falaaa')
       } 
     } else{
       createModalToAddCart(games, index)
-      console.log('falaaa')
     }
     modalCommands()
   }

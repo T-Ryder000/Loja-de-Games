@@ -138,6 +138,7 @@ const searchProducts = games => {
   searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
   })
+  //buttons para eventos na pagina
   searchBar.addEventListener('input', startOperation)
   searchBar.addEventListener('keydown', handleKeyPress) //Função da tecla 'enter' do teclado
   deleteValueButton.addEventListener('click', deleteValue)

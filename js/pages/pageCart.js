@@ -2,25 +2,20 @@ import changeCartValue from '../modules/changeCartValue.js'
 import finalizePurchase from '../modules/finalizePurchase.js'
 import createModalDelete from '../components/modals/modalProductDelete.js'
 
-
-
 const createPageCart = () => {
-  // Seleciona o elemento no DOM onde o carrinho será adicionado
-  const pageCart = document.querySelector('[data-section="cart"]')
+  const pageCart = document.querySelector('[data-section="cart"]')//Page do carrinho de compras
 
-  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
-
-  // Cria um contêiner para o carrinho
+  //Cria um contêiner para a page do carrinho
   const containerCart = document.createElement('div')
   containerCart.classList.add('container-cart')
   containerCart.setAttribute('data-container', 'cart')
 
-  // Puxa os objetos dos produtos no local storage e os converte novamente
+  //Puxa os objetos dos produtos no local storage.
   const objectProductsCart = localStorage.getItem('cartItems')
   // Se o objeto estiver presente, converte em array; senão, inicializa uma array vazia
   const cartItems = JSON.parse(objectProductsCart) || []
 
-  // Criar HTML para cada produto no carrinho usando o método map
+  //Cria um HTML para cada produto no carrinho usando o método map
   const productsHTML = cartItems
     .map(
       gameForCart => `
@@ -57,8 +52,7 @@ const createPageCart = () => {
     )
     .join('') // O método join une as strings geradas pelo map em uma única string
 
-  // Monta a estrutura completa do carrinho
-
+  //Monta a estrutura do carrinho
   containerCart.innerHTML = `
     <div class="container-cart-products">
       <h3 class="text-cart-products">PRODUTOS NO CARRINHO</h3>
@@ -80,15 +74,15 @@ const createPageCart = () => {
     </div>
   `
 
-  // Adiciona o container do carrinho a seção no DOM
+  //Adiciona o conteudo do carrinho a page
   pageCart.appendChild(containerCart)
 
   //chama função de finalizar compra
   finalizePurchase()
-  //chama função de alterar quantidades do produto
+  //chama função de alterar quantidades do produto pelo select
   changeCartValue()
 
-  //Botao para apagar produto do carrinho
+  //Button para apagar produto do carrinho
   const buttonDeleteProductCard = document.querySelectorAll(
     '[data-button="cart-delete"]'
   )
