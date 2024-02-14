@@ -1,16 +1,19 @@
 const createPageFinal = () => {
-  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
-  const pageCart = document.querySelector('[data-section="cart"]') //page do carrinho de compras
-  const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
+
+//Form e buttons
 
   const formFinalizePayment = document.querySelector('[data-form="finish"]') //form da finalização de compras
-  const buttonFinalizePayment = document.querySelector(
-    '[data-button="finalize-payment"]'
-  ) //button para finalizar as compras
+  const buttonFinalizePayment = document.querySelector('[data-button="finalize-payment"]')//button para finalizar pagamento
+  const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
+
+//Pages, Sections e modal
+
+  const pageCart = document.querySelector('[data-section="cart"]') //page do carrinho de compras
   const pageFinal = document.querySelector('[data-container="page-final"]') //pagina final de agradecimento
   const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
+  const containerModal = document.querySelector('[data-container="modal"]') //modal da pagina
 
   const resetContent = () => {
     const paymentCard = document.querySelector('[data-select="card-options"]') //select de cartoes para pagamento
