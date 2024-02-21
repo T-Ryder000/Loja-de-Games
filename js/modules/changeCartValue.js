@@ -3,7 +3,6 @@ import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 const changeCartValue = () => {
   // Seleciona os elementos
   const selectList = document.querySelectorAll('[data-select="cart-amount"]')
-  const formSelect = document.querySelector('[data-form="select"]')
 
   // Obtém os itens do carrinho do armazenamento local
   const objectProductsCart = localStorage.getItem('cartItems')
@@ -30,9 +29,6 @@ const changeCartValue = () => {
     })
   })
 
-  formSelect.addEventListener('submit', e => {
-    e.preventDefault()
-  })
 }
 
 export default changeCartValue
