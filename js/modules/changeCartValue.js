@@ -1,46 +1,41 @@
-import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js';
+import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js'
 
 const changeCartValue = () => {
   // Seleciona os elementos
-  const selectList = document.querySelectorAll('[data-select="cart-amount"]');
-  const formSelect = document.querySelector('[data-form="select"]');
-
-  formSelect.addEventListener('submit', e => {
-    e.preventDefault();
-  });
+  const selectList = document.querySelectorAll('[data-select="cart-amount"]')
+  const formSelect = document.querySelector('[data-form="select"]')
 
   // Obtém os itens do carrinho do armazenamento local
-  const objectProductsCart = localStorage.getItem('cartItems');
-  const cartItems = JSON.parse(objectProductsCart) || [];
+  const objectProductsCart = localStorage.getItem('cartItems')
+  const cartItems = JSON.parse(objectProductsCart) || []
 
   // Adiciona um ouvinte de evento de mudança para cada elemento de seleção
   selectList.forEach((select, index) => {
+    // const selectOption = select.querySelectorAll('[data-select="option"]')
     select.addEventListener('change', function (e) {
-      const selectedIndex = e.target.selectedIndex + 1;
+      const selectedIndex = e.target.selectedIndex
       console.log(selectedIndex)
 
-      // Marca a opção selecionada
-      // select.options[selectedIndex].selected = true;
-      console.log(select.options)
-
+      console.log(select.options[1])
+      select.options[selectedIndex].selected = true
 
       // Atualiza o valor da propriedade 'numeroDoSelect' do objeto no array com base no índice selecionado
       if (index >= 0 && index < cartItems.length) {
-        cartItems[index].numeroDoSelect = parseInt(select.value);
+        cartItems[index].numeroDoSelect = parseInt(select.value)
         // Atualiza o array no localStorage
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
       }
       // Atualiza a página
-      resetAndDisplayPageCart();
-    });
-  });
-};
+      resetAndDisplayPageCart()
+    })
+  })
 
-export default changeCartValue;
+  formSelect.addEventListener('submit', e => {
+    e.preventDefault()
+  })
+}
 
-
-
-
+export default changeCartValue
 
 // import resetAndDisplayPageCart from '../modules/resetAndDisplayPageCart.js';
 
@@ -82,4 +77,3 @@ export default changeCartValue;
 // };
 
 // export default changeCartValue;
-
