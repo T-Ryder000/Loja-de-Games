@@ -8,9 +8,14 @@ const showCreatedModal = games => {
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
   const btnAddCart = document.querySelectorAll('[data-button="add-cart"]') //Produtos na main
-  const btnAddCartCopy = document.querySelectorAll(
-    '[data-button="add-cart-copy"]'
+  const btnAddCartSearch = document.querySelectorAll(
+    '[data-button="add-cart-Search"]'
   ) //Produtos na pesquisa
+
+
+  const clickPage = document.querySelectorAll('[data-image="product"]') //capa do jogo, quando clicado, mostra a page do product
+
+
 
   //Body, sections, modal e pages
 
@@ -19,6 +24,7 @@ const showCreatedModal = games => {
   const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const sectionFound = document.querySelector('[data-container="found"]') //Sessao dos produtos da pesquisa
   const containerModal = document.querySelector('[data-container="modal"]') //Container do modal
+  const pageProduct = document.querySelector('[data-container="show-product"]') //page do product
   const pageCart = document.querySelector('[data-section="cart"]') //Page do carrinho de compras
 
   //Form
@@ -54,6 +60,8 @@ const showCreatedModal = games => {
     sectionProducts.classList = 'section-products-hide'
     //esconder produtos da pesquisa
     sectionFound.classList = 'section-found-hide'
+    //esconder page do produto
+    pageProduct.classList = 'show-product-hide'
     //mostrar page do carrinho de compras
     pageCart.classList = 'section-shopping-cart'
 
@@ -89,8 +97,8 @@ const showCreatedModal = games => {
         createModalProdcutExisting(index)
       } else if (isGameInCart === false) {
         createModalToAddCart(games, index)
-      } 
-    } else{
+      }
+    } else {
       createModalToAddCart(games, index)
     }
     modalCommands()
@@ -106,9 +114,9 @@ const showCreatedModal = games => {
       '[data-button="continue"]'
     ) //botao de ocultar o modal
 
-      formModal.addEventListener('submit', preventDefault)
-      buttonForCart.addEventListener('click', showShoppingCart)
-      ButtonContinueShopping.addEventListener('click', hideModal)
+    formModal.addEventListener('submit', preventDefault)
+    buttonForCart.addEventListener('click', showShoppingCart)
+    ButtonContinueShopping.addEventListener('click', hideModal)
   }
 
   //Commands buttons modal
@@ -122,12 +130,30 @@ const showCreatedModal = games => {
     })
   })
 
-  btnAddCartCopy.forEach((button, index) => {
+  btnAddCartSearch.forEach((button, index) => {
     button.addEventListener('click', function () {
       showClickedProduct(index)
       showModal()
     })
   })
+
+//Para mostrar modal de direção ao carrinho ao add produto
+  let productId //index do product clicado
+
+  clickPage.forEach((item, index) => {
+    item.addEventListener('click', function () {
+      productId = index
+      const btnAddCartPageProduct = document.querySelector('[data-button="page-product-add"]') //button da page do carrinho 
+      if(btnAddCartPageProduct){
+      btnAddCartPageProduct.addEventListener('click', function () {
+          showClickedProduct(productId)
+          showModal()
+        })
+      }
+    })
+  })
+////////////////////////////////////////////////////////////////////////////
+
 
   //Commands logo
 

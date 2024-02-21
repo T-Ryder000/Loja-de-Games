@@ -27,7 +27,7 @@ const createPageCart = () => {
       </div>
       <!-- Gerenciamento do produto no carrinho -->
       <div class="cart-manager">
-        <form class="form-product-quantity">
+        <form class="form-product-quantity" data-form="select">
           <!-- Opções de quantidade do produto -->
           <select class="product-quantity" data-select="cart-amount" name="number-products" id="number-products">
             <option data-select="option" value="0">${

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body id="page-top" data-body="content">
-
     <!-- Modal da pagina (Escondido) -->
     <section class="hide-modal" data-container="modal"></section>
 
@@ -40,7 +39,7 @@
               ></button>
               <input
                 class="search-bar-header"
-                type="search"
+                type="text"
                 placeholder="Pesquisar loja"
                 data-bar="search"
               />
@@ -49,7 +48,11 @@
                 data-delete="value"
               ></button>
             </form>
+            <form class="form-cart-header" data-form="cart-header">
+              <button class="fa-solid fa-cart-shopping cart-header" data-button="cart-header"></button>
+            </form>
           </li>
+ 
         </ul>
       </nav>
     </header>
@@ -108,10 +111,12 @@
 
     <!-- Scripts -->
 
-    <script src="https://kit.fontawesome.com/730f4803c3.js" crossorigin="anonymous" ></script>
+    <script
+      src="https://kit.fontawesome.com/730f4803c3.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module">
-
-     //importando page que irá conter o slider e os produtos
+      //importando page que irá conter o slider e os produtos
       import createMainPageTemplate from './js/pages/pageMain.js'
 
       const main = document.querySelector('[data-main="root"]') //Variavél da main
@@ -134,6 +139,7 @@
       import ScrollEventOnClick from './js/modules/eventScrollar.js'
       import searchProducts from './js/modules/eventSearch.js'
       import showCreatedModal from './js/modules/showModal.js'
+      import showCart from "./js/modules/showCartHeader.js"
       //paginas
       import pageProduct from './js/pages/pageProduct.js'
 
@@ -148,11 +154,11 @@
           searchProducts(games)
           pageProduct(games)
           showCreatedModal(games)
+          showCart()
         })
         .catch(error => {
           console.log(`Houve um erro na chamada de dados: ${error}`)
         })
     </script>
-
   </body>
 </html>

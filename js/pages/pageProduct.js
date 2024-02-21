@@ -4,12 +4,14 @@ const pageProduct = games => {
   //Buttons
 
   const clickPage = document.querySelectorAll('[data-image="product"]') //capa do jogo, quando clicado, mostra a page do product
-  const clickPageCopy = document.querySelectorAll('[data-image="productCopy"]') //capa do jogo do campo de busca, quando clicado, mostra a page do product
+  const clickPageSearch = document.querySelectorAll(
+    '[data-image="productSearch"]'
+  ) //capa do jogo do campo de busca, quando clicado, mostra a page do product
   const returnButton = document.querySelector('[data-return="return-home"]') //Botao de retornar para page main
 
-  //Sections e pages
+  //Sections, pages e modal
 
-  const sectionSlider = document.querySelector('[data-container="slider"]')// Sessao do slider da pagina
+  const sectionSlider = document.querySelector('[data-container="slider"]') // Sessao do slider da pagina
   const sectionProducts = document.querySelector('[data-container="products"]') //Sessao da coleção de jogos
   const sectionFound = document.querySelector('[data-container="found"]') //Sessao da coleção de jogos do campo de busca
   const pageProduct = document.querySelector('[data-container="show-product"]') //page do product
@@ -20,7 +22,6 @@ const pageProduct = games => {
   gameContainer.classList.add('game-container')
   pageProduct.appendChild(gameContainer) //add essa div a page do produto ("pageProduct")
 
-  let productId //index do product clicado
 
   //Processing
 
@@ -83,50 +84,6 @@ const pageProduct = games => {
       }
     }
 
-    //Cria objeto e envia dados para serem salvos no local storage
-    const createProductToSave = index => {
-      if (index === element.id) {
-        const gameForCart = {
-          nome: `${element.nome}`,
-          preco: `${element.preco}`,
-          capa: `${element.capa}`,
-          id: index,
-          numeroDoSelect: 1
-        }
-        //função importada
-        saveProduct(gameForCart)
-      }
-    }
-
-    //Exibir page carrinho de compras e button return, e esconde page main
-    const showShoppingCart = () => {
-      //mostrar page do carrinho de compras
-      pageCart.classList = 'section-shopping-cart'
-      returnButton.style.visibility = 'visible'
-      sectionSlider.classList = 'section-slider-hide'
-      sectionProducts.classList = 'section-products-hide'
-    }
-
-    //Commands buttons da page product
-
-    const commandsPageProducts = () => {
-      //Button para ocultar page do product e ir ao Carrinho de Compras
-      const btnAddCartPageProduct = document.querySelector(
-        '[data-button="page-product-add"]'
-      ) //Add product ao carrinho
-      btnAddCartPageProduct.addEventListener('click', function () {
-        hidePageProduct()
-        createProductToSave(productId)
-        showShoppingCart()
-      })
-      //form da page product
-      const formAddCartPageProduct = document.querySelector(
-        '[data-form="pageProduct"]'
-      ) //form da page dos produtos
-      formAddCartPageProduct.addEventListener('submit', function (e) {
-        e.preventDefault()
-      })
-    }
 
     //buttons
 
@@ -141,7 +98,7 @@ const pageProduct = games => {
       })
     })
     //Varre cada produto e chama as funções mediante o produto do campo de busca que for clicado
-    clickPageCopy.forEach((item, index) => {
+    clickPageSearch.forEach((item, index) => {
       item.addEventListener('click', function () {
         dataProcessing(index)
         showAndHide()
@@ -153,6 +110,18 @@ const pageProduct = games => {
 
     //Button de retornar que esconde a pagina do produto
     returnButton.addEventListener('click', hidePageProduct)
+
+
+    //Retira efeito padrão de submit do form da page do produto
+    const commandsPageProducts = () => {
+      const formAddCartPageProduct = document.querySelector(
+        '[data-form="pageProduct"]'
+      )
+      formAddCartPageProduct.addEventListener('submit', function (e) {
+        e.preventDefault()
+      })
+    }
+
   })
 }
 
